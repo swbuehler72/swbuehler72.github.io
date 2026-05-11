@@ -7,23 +7,9 @@ author:
   name: Steven Buehler
   email: steven@swb72.us
 
-# The `>` after `description:` means to ignore line-breaks until next key. If
-#   you wish to omit the line-break after the end of text, use `>-` instead.
 description: >
   A gloriously awkward blog.
 
-
-# Build settings
-# --------------
-
-# If you wish to use the gem-version of Minima with or without a Gemfile, use
-#   the following setting:
-# theme: minima
-
-# **OR** if you wish to use the theme directly from the GitHub repository by
-#   bypassing a Gemfile, use the following setting instead.
-#   It is best that you lock to a particular commit and update if upstream changes
-#   do not affect your site adversely.
 remote_theme: jekyll/minima
 
 # Minima requires the following plugins:
