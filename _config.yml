@@ -26,28 +26,30 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: swb72
 github_username:  swbuehler72
+author:
+  name: Steven Buehler
+  email: steven@swb72.us
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+minima:
+  social_links:
+    - title: Steven Buehler on Facebook
+      icon: facebook
+      url: https://facebook.com/stevenwatsonbuehler
+    - title: The Study of Starlight on Instagram
+      icon: instagram
+      url: https://instagram.com/thestudyofstarlight
+    - title: The Study of Starlight on Twitch
+      icon: twitch
+      url: https://twitch.tv/thestudyofstarlight
+    - title: The Study of Starlight on Threads
+      icon: threads
+      url: https://threads.com/thestudyofstarlight
+    - title: The Study of Starlight on YouTube
+      icon: youtube
+      url: https://youtube.com/@thestudyofstarlight
+      
