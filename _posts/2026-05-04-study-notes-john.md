@@ -2,7 +2,9 @@
 layout: post
 title: "Study Notes: 1 - 3 John, Apostle, Background"
 date: 2026-05-04
-tags: bible study
+tags: 
+    - Bible Study
+    - 1 John
 ---
 
 John describes himself five times as "the disciple whom Jesus Loved": 
