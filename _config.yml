@@ -21,7 +21,7 @@
 title: Steven Watson Buehler
 email: steven@swb72.us
 description: >- # this means to ignore newlines until "baseurl:"
-  Steven's *gloriously* awkward blog. Looking for The Study of Starlight? Go to <a href="https://www.thestudyofstarlight.com">https://www.thestudyofstarlight.com</a>.
+  Steven's *gloriously* awkward blog. Looking for The Study of Starlight? Go to <https://www.thestudyofstarlight.com>.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: swb72
