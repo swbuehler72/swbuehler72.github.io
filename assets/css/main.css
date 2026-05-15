@@ -1,0 +1,151 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --secondary-color: #999;
+  --link-color: #1a1a1a;
+  --max-width: 680px;
+}
+
+body {
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+header {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header h1 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+header nav a {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+  margin-left: 1.5rem;
+}
+
+header nav a:hover {
+  color: var(--text-color);
+}
+
+header a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+h2.year {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.post-date {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.post-title {
+  font-size: 1rem;
+}
+
+.post-title a {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.post-title a:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.post-content {
+  font-family: "Source Serif 4", "Charter", "Georgia", "Cambria", "Times New Roman", Times, serif;
+  font-size: 1.125rem;
+  margin-top: 3rem;
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-top: 2.5rem;
+  font-weight: 600;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+code, pre {
+  font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+.post-content code {
+  background-color: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.post-content pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+footer {
+  margin-top: 5rem;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+footer a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
