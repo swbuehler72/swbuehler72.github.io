@@ -83,6 +83,21 @@ h2.year {
   font-size: 1rem;
 }
 
+.post-tags {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+  background-color: #f0f0f0;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  text-transform: lowercase;
+}
+
 .post-title a {
   color: var(--text-color);
   text-decoration: none;
