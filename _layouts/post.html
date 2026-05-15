@@ -9,7 +9,7 @@ layout: default
         &bull; 
         <span class="post-tags" style="margin-left: 0;">
           {% for tag in page.tags %}
-            <span class="tag">{{ tag }}</span>
+            <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
           {% endfor %}
         </span>
       {% endif %}
