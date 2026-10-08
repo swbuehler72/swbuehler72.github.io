@@ -8,8 +8,8 @@ author:
   name: Steven Buehler
   email: github_pages@swb72.us
 
-The `>` after `description:` means to ignore line-breaks until next key. If
-  you wish to omit the line-break after the end of text, use `>-` instead.
+# The `>` after `description:` means to ignore line-breaks until next key. If
+#   you wish to omit the line-break after the end of text, use `>-` instead.
 description: >
   Gloriously awkward fifty-something.
 
