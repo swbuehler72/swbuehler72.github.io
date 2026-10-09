@@ -5,7 +5,9 @@ author:
   email: github_pages@swb72.us
 description: >
   Gloriously awkward fifty-something.
-
+url: "https://swbuehler72.github.io"
+disqus:
+  shortname: gloriously-awkward-life
 minima:
   skin: auto
   nav_pages:
