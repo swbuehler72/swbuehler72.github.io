@@ -1,32 +1,17 @@
 theme: minima
-# Site-wide settings
-# ------------------
-
 title: Steven Watson Buehler
-
 author:
   name: Steven Buehler
   email: github_pages@swb72.us
-
-# The `>` after `description:` means to ignore line-breaks until next key. If
-#   you wish to omit the line-break after the end of text, use `>-` instead.
 description: >
   Gloriously awkward fifty-something.
 
-
-# Minima-specific settings (applicable to Minima v3 and above only)
-# -----------------------------------------------------------------
-#
-#  *All described config keys below should be nested under the top-level
-#   `minima` key.*
-#
 minima:
   skin: auto
-#   nav_pages:
-#     - about.md
+  nav_pages:
+    - about.md
   show_excerpts: false
-#   date_format: "%b-%d-%Y"
-#
+  date_format: "%d %B %Y"
   social_links:
     - title: Steven Buehler's Facebook
       icon: facebook
