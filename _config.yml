@@ -14,11 +14,17 @@ minima:
     - now.md
     - uses.md
   show_excerpts: false
-  date_format: "%-d %B %Y"
+  date_format: "%A, %-d %B %Y"
   social_links:
     - title: Steven Buehler's Facebook
       icon: facebook
       url: "https://facebook.com/stevenwatsonbuehler"
     - title: The Study of Starlight's Facebook
       icon: facebook
-      url: "https://facebook.com/thestudyofstarlight"
+      url: "https://facebook.com/studyofstarlight"
+    - title: TSoS YouTube
+      icon: youtube
+      url: "https://youtube.com/@thestudyofstarlight"
+    - title: Steven's Twitter
+      icon: fa-twitter
+      url: "https://x.com/@swb72"
