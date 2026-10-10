@@ -1,10 +1,12 @@
 ---
-title: /using
-slug: using
+title: /uses
+slug: uses
 author: Steven Buehler
 date: 2026-10-09
 layout: page
 ---
+
+See `https://indieweb.org/using`. 
 
 ## Hardware
 
