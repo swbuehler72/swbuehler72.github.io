@@ -6,6 +6,8 @@ date: 2026-10-09
 slug: now
 ---
 <div style="text-align:right">Last updated 9 October 2026</div>
+<p>&nbsp;</p>
+<div style="width: 250px; float: right; margin: 5px 5px 20px 5px"><img src="https://radar.weather.gov/ridge/standard/KMLB_loop.gif" alt="Melbourne,  Florida weather radar."><br/><font size="1">Melbourne, Florida (MLB) Weather Radar</font></div>
 
 ## Doing
 
@@ -26,4 +28,4 @@ slug: now
 
 ## Using
 
-Moved to [its own page](/using) because the list has gotten lengthy.
+Moved to [its own page](/uses) because the list has gotten lengthy.
