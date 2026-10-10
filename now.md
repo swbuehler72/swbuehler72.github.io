@@ -7,6 +7,9 @@ slug: now
 ---
 <div style="text-align:right">Last updated 9 October 2026</div>
 <p>&nbsp;</p>
+
+Inspired by [`https://nownownow.com`](https://nownownow.com). 
+
 <div style="width: 250px; float: right; margin: 5px 5px 20px 5px"><img src="https://radar.weather.gov/ridge/standard/KMLB_loop.gif" alt="Melbourne,  Florida weather radar."><br/><font size="1">Melbourne, Florida (MLB) Weather Radar</font></div>
 
 ## Doing
