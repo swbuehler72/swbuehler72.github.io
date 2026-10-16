@@ -1,4 +1,6 @@
 remote_theme: jekyll/minima
+kramdown:
+  math_engine: mathjax
 title: Steven Watson Buehler
 author:
   name: Steven Buehler
