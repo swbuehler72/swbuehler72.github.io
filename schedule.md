@@ -3,6 +3,7 @@ layout: page
 title: /schedule
 author: Steven Buehler
 date: 2026-10-16
+slug: schedule
 ---
 
 Below is a general schedule that may be useful in finding times to meet up.

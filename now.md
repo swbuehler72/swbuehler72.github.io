@@ -2,10 +2,10 @@
 layout: page
 title: /now
 author: Steven Buehler
-date: 2026-10-09
+date: 2026-10-16
 slug: now
 ---
-<div style="text-align:right">Last updated 9 October 2026</div>
+<div style="text-align:right">Last updated 16 October 2026</div>
 <p>&nbsp;</p>
 
 Inspired by [`https://nownownow.com`](https://nownownow.com). 
@@ -16,7 +16,7 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 * Report development (SSRS, TOAD Data Point) with [Optum Workers' Comp & Auto No-Fault](https://workcompauto.optum.com).
 * Music/creative work as [The Study of Starlight](https://www.thestudyofstarlight.com).
-* Volunteer with [Mosaic Church](https://thisismosaic.org) working with neurodivergent young adults, and with [Mosaic Church @ WDW](https://thisismosaic.org/wdw) doing Disney Cast Member outreach.
+* Volunteer with [Mosaic Church](https://thisismosaic.org) working with men in sexual addiction recovery, and with neurodivergent young adults and adults, and with [Mosaic Church @ WDW](https://thisismosaic.org/wdw) doing Disney Cast Member outreach.
 
 ## Reading
 
@@ -24,6 +24,8 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 * Warren Baker, D.R.E. (editor), _Hebrew-Greek Key Word&reg; Study Bible_, ESV Edition. (Updated version of the original NASB by Spiros Zodhiates, Th.D. that I originally bought thirty years ago.)
 
 ## Going
+
+See also the [`/schedule`](/schedule) page.
 
 * **24&ndash;28 November 2026** &mdash; Michigan to see family.
 * **20 February 2027** &mdash; [BAMARAMA](https://www.bamarama.org) (geocaching event) in Elberta, Alabama.
