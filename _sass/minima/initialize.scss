@@ -54,3 +54,7 @@ $on-large:         $on-laptop !default;
   "minima/layout",           // Defines structure and style based on CSS selectors.
   "minima/custom-styles"     // Hook to override existing styles.
 ;
+
+table {
+  font-size: 0.85em;
+}
