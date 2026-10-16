@@ -16,17 +16,17 @@ Below is a general schedule that may be useful in finding times to meet up.
 
 | Time               | What |
 |-------------------:|------|
-| 8:40 AM – 1:00 PM | @ [Mosaic Church](https://www.thisismosaic.org)—I attend the 9:02 AM service, followed by "Office Hours" in the lobby during the 11:17 AM service.
-| 6:40 PM – 8:30 PM | @ [Mosaic @ WDW](https://www.thisismosaic.org/wdw) for the 7:02 PM service.
-| 9:00 PM – 11:00 PM | "Office Hours" @ Magic Kingdom Park (if open until 11 PM) <br/> "Office Hours" @ Disney Springs West Side Starbucks (otherwise).
+| <nobr>8:40 AM – 1:00 PM</nobr> | @ [Mosaic Church](https://www.thisismosaic.org)—I attend the 9:02 AM service, followed by "Office Hours" in the lobby during the 11:17 AM service.
+| <nobr>6:40 PM – 8:30 PM</nobr> | @ [Mosaic @ WDW](https://www.thisismosaic.org/wdw) for the 7:02 PM service.
+| <nobr>9:00 PM – 11:00 PM</nobr> | "Office Hours" @ Magic Kingdom Park (if open until 11 PM) <br/> "Office Hours" @ Disney Springs West Side Starbucks (otherwise).
 
 ## Weekdays
 
 | Time               | What |
 |-------------------:|------|
-| 8:00 AM – 4:00 PM | My regular working hours in the home workspace (sometimes elsewhere as "Office Hours"). This is what I get paid to do.
-| 7:00 PM – 8:30 PM | **Mondays** @ [Mosaic Church](https://thisismosaic.org) for Men's Freedom Group (sexual addiction recovery).
-| 8:30 PM - 10:00 PM | **Thursdays** @ [Mosaic Church](https://thisismosaic.org) meeting up with the neurodivergent young adults and adults after the main Young Adults service.
+| <nobr>8:00 AM – 4:00 PM</nobr> | My regular working hours in the home workspace (sometimes elsewhere as "Office Hours"). This is what I get paid to do.
+| <nobr>7:00 PM – 8:30 PM</nobr> | **Mondays** @ [Mosaic Church](https://thisismosaic.org) for Men's Freedom Group (sexual addiction recovery).
+| <nobr>8:30 PM - 10:00 PM</nobr> | **Thursdays** @ [Mosaic Church](https://thisismosaic.org) meeting up with the neurodivergent young adults and adults after the main Young Adults service.
 
 I am off on local PTO November 23–25 (Thanksgiving week) and December 4, 11, 18, 21–24 (Christmas week), and 28–31 (New Year's week).
 
@@ -44,5 +44,5 @@ If there is a rocket launch from Kennedy Space Center/Cape Canaveral with viewin
 
 | When           | What |
 |---------------:|------|
-| Oct 19 6:30 AM | SpaceX Bandwagon-5 from SLC-40. No viewing opportunity at the VC. |
-| NET Oct 29 | ULA Vulcan VC6L Amazon Leo (LV-01) from SLC-41. No time or viewing opportunity announced yet. |
+| <nobr>Oct 19 6:30 AM</nobr> | SpaceX Bandwagon-5 from SLC-40. No viewing opportunity at the VC. |
+| <nobr>NET Oct 29</nobr> | ULA Vulcan VC6L Amazon Leo (LV-01) from SLC-41. No time or viewing opportunity announced yet. |
