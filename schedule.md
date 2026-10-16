@@ -34,7 +34,7 @@ I will be traveling in rural Michigan November 24–28.
 
 ## Saturdays
 
-Saturdays are a rest/_shabb&amacr;th_ day with no set schedule. May or may not have "office hours". I may not be Jewish, but I do recognize the benefit to having at least one day a week to rest and recharge, the purpose for which God made it.
+Saturdays are a rest/_shabbāth_ day with no set schedule. May or may not have "office hours". I may not be Jewish, but I do recognize the benefit to having at least one day a week to rest and recharge, the purpose for which God made it.
 
 ## One-offs
 
