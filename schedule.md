@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Schedule
+title: /schedule
 author: Steven Buehler
 date: 2026-10-16
 ---
