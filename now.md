@@ -14,6 +14,8 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 Since I can't include real-time updating in Github Pages without exceeding the daily build quota, it's in [this Google Doc](https://docs.google.com/document/d/15veLSBLBQ_EOTp0bHfGxTAFN51XuT7xps1f_kgYg3rA/preview) instead.
 
+<iframe width="100%" height="300" src="https://docs.google.com/document/d/e/2PACX-1vSOhMvBiliJTUSbnKBlK43V8EwWWy1ieMvG6NuBAAjvTbouCUuVN0j67xZzGwsSqZ0qjwvreH30Vi3a/pub?embedded=true"></iframe>
+
 ## Doing
 
 * Report development (SSRS, TOAD Data Point) with [Optum Workers' Comp & Auto No-Fault](https://workcompauto.optum.com).
