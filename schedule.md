@@ -36,7 +36,7 @@ I will be traveling in rural Michigan November 24–28.
 
 Saturdays are a rest/_shabbāth_ day with no set schedule. May or may not have "office hours". I may not be Jewish, but I do recognize the benefit to having at least one day a week to rest and recharge, the purpose for which God made it.
 
-## One-offs
+## One-offs & travel
 
 I occsionally have one-off out-of-office days when I'm otherwise available.
 
@@ -46,3 +46,4 @@ If there is a rocket launch from Kennedy Space Center/Cape Canaveral with viewin
 |---------------:|------|
 | <nobr>Oct 19 6:30 AM</nobr> | SpaceX Bandwagon-5 from SLC-40. No viewing opportunity at the VC. |
 | <nobr>NET Oct 29</nobr> | ULA Vulcan VC6L Amazon Leo (LV-01) from SLC-41. No time or viewing opportunity announced yet. |
+| <nobr>Nov 24&ndash;28</nobr> | Traveling - Rural Michigan. |
