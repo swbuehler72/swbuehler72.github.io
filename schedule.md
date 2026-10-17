@@ -28,10 +28,6 @@ Below is a general schedule that may be useful in finding times to meet up.
 | <nobr>7:00 PM – 8:30 PM</nobr> | **Mondays** @ [Mosaic Church](https://thisismosaic.org) for Men's Freedom Group (sexual addiction recovery).
 | <nobr>8:30 PM - 10:00 PM</nobr> | **Thursdays** @ [Mosaic Church](https://thisismosaic.org) meeting up with the neurodivergent young adults and adults after the main Young Adults service.
 
-I am off on local PTO November 23–25 (Thanksgiving week) and December 4, 11, 18, 21–24 (Christmas week), and 28–31 (New Year's week).
-
-I will be traveling in rural Michigan November 24–28. 
-
 ## Saturdays
 
 Saturdays are a rest/_shabbāth_ day with no set schedule. May or may not have "office hours". I may not be Jewish, but I do recognize the benefit to having at least one day a week to rest and recharge, the purpose for which God made it.
