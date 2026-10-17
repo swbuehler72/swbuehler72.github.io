@@ -10,7 +10,9 @@ slug: now
 
 Inspired by [`https://nownownow.com`](https://nownownow.com). 
 
-<div style="width: 400px; float: right; margin: 5px 5px 20px 5px"><iframe width="400" height="400" src="https://docs.google.com/document/d/15veLSBLBQ_EOTp0bHfGxTAFN51XuT7xps1f_kgYg3rA/preview"></iframe></div>
+## Real-time update
+
+Since I can't include real-time updating in Github Pages without exceeding the daily build quota, it's in [this Google Doc](https://docs.google.com/document/d/15veLSBLBQ_EOTp0bHfGxTAFN51XuT7xps1f_kgYg3rA/preview) instead.
 
 ## Doing
 
