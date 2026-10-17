@@ -43,3 +43,6 @@ minima:
     - title: Substack
       icon: substack
       url: "https://thestudyofstarlight.substack.com"
+    - title: Flickr
+      icon: flickr
+      url: "https://www.flickr.com/thestudyofstarlight"
