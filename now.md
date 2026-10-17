@@ -10,7 +10,7 @@ slug: now
 
 Inspired by [`https://nownownow.com`](https://nownownow.com). 
 
-<div style="width: 400px; float: right; margin: 5px 5px 20px 5px"><iframe src="https://docs.google.com/document/d/e/2PACX-1vSOhMvBiliJTUSbnKBlK43V8EwWWy1ieMvG6NuBAAjvTbouCUuVN0j67xZzGwsSqZ0qjwvreH30Vi3a/pub?embedded=true"></iframe></div>
+<div style="width: 400px; float: right; margin: 5px 5px 20px 5px"><iframe width="400" height="400" src="https://docs.google.com/document/d/e/2PACX-1vSOhMvBiliJTUSbnKBlK43V8EwWWy1ieMvG6NuBAAjvTbouCUuVN0j67xZzGwsSqZ0qjwvreH30Vi3a/pub?embedded=true"></iframe></div>
 
 ## Doing
 
