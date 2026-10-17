@@ -40,3 +40,6 @@ minima:
     - title: TheStudyofStarlight on Twitch
       icon: twitch
       url: "https://twitch.tv/thestudyofstarlight"
+    - title: Substack
+      icon: substack
+      url: "https://thestudyofstarlight.substack.com"
