@@ -12,9 +12,8 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 ## Real-time update
 
-Since I can't include real-time updating in Github Pages without exceeding the daily build quota, it's in [this Google Doc](https://docs.google.com/document/d/15veLSBLBQ_EOTp0bHfGxTAFN51XuT7xps1f_kgYg3rA/preview) instead.
+Working on figuring this out with Github Pages, as I don't want a location or checkin to cause the entire site to get reprocessed. 
 
-<div style="text-align:center"><iframe width="75%" height="300" src="https://docs.google.com/document/d/e/2PACX-1vSOhMvBiliJTUSbnKBlK43V8EwWWy1ieMvG6NuBAAjvTbouCUuVN0j67xZzGwsSqZ0qjwvreH30Vi3a/pub?embedded=true"></iframe></div>
 
 ## Doing
 
