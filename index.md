@@ -4,7 +4,8 @@ author: Steven Buehler
 date: 2026-10-10
 layout: home
 ---
-Hello, world. 😉
+
+_There's an experimental version of this site at <https://pi.swb72.us>._
 
 I'm a _gloriously_ awkward neurodivergent mid-fifty-something, full-time remote reporting developer, pastoral ministries/biblical studies graduate, and hopeless Disney fanatic based in Four Corners, Florida. I've worked in the past with sexual/pornography addiction recovery (including my own), I've more recently started volunteering to help provide a safe space for neurodivergent young men and adults to be transparent, be themselves, and explore the Christian journey through the unique lenses of our lifelong mental health conditions.
 
