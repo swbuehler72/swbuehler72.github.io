@@ -12,6 +12,8 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 ## Real-time update
 
+_This section requires JavaScript on your end._
+
 **Current location**
 
 <p id="now-location" class="now-status">Loading&hellip;</p>
