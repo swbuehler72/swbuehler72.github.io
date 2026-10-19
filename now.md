@@ -12,7 +12,18 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 ## Real-time update
 
-Working on figuring this out with Github Pages, as I don't want a location or checkin to cause the entire site to get reprocessed. 
+**Current location**
+
+<p id="now-location" class="now-status">Loading&hellip;</p>
+
+**Latest check-in**
+
+<p id="now-checkin" class="now-status">Loading&hellip;</p>
+
+<style>
+  .now-category, .now-when { font-size: 0.85em; opacity: 0.7; }
+</style>
+<script src="{{ '/assets/js/now-live.js' | relative_url }}" defer></script>
 
 
 ## Doing
