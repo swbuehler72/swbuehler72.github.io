@@ -10,16 +10,15 @@ slug: now
 
 Inspired by [`https://nownownow.com`](https://nownownow.com). 
 
-## Real-time update
+## Real-time update[^1]
 
-> [!NOTE]
-> _This section requires JavaScript with CORS on your end as it polls my database server._
+[^1]: Real-time section requires JavaScript with CORS access to poll my real-time server. 
 
-**Current location**
+### Current location**
 
 <p id="now-location" class="now-status">Loading&hellip;</p>
 
-**Latest check-in**
+### Latest check-in**
 
 <p id="now-checkin" class="now-status">Loading&hellip;</p>
 
