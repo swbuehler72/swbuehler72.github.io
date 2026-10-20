@@ -14,11 +14,11 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 [^1]: Real-time section requires JavaScript with CORS access to poll my real-time server. 
 
-### Current location**
+### Current location
 
 <p id="now-location" class="now-status">Loading&hellip;</p>
 
-### Latest check-in**
+### Latest check-in
 
 <p id="now-checkin" class="now-status">Loading&hellip;</p>
 
