@@ -12,7 +12,8 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 ## Real-time update
 
-_This section requires JavaScript on your end._
+> [!NOTE]
+> _This section requires JavaScript with CORS on your end as it polls my database server._
 
 **Current location**
 
