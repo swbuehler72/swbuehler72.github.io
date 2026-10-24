@@ -2,7 +2,7 @@
 layout: page
 title: /now
 author: Steven Buehler
-date: 2026-10-16
+date: 2026-10-24
 slug: now
 ---
 <div style="text-align:right">Last updated 16 October 2026</div>
@@ -27,6 +27,11 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 </style>
 <script src="{{ '/assets/js/now-live.js' | relative_url }}" defer></script>
 
+## Life in General
+
+Now that the Florida rainy/humid season has ended I'm out walking more around Walt Disney World on a daily basis. Monday & Tuesday were Disney's Animal Kingdom, Wednesday was Disney's Hollywood Studios, and Thursday was EPCOT before taking a rest on Friday to play through [Control Ultimate Edition](https://games.apple.com/us/game/6502953520), which was dropped to $2.99 in Apple's App Store. 
+
+We're tweaking how we're doing our ND young adult outreach on Thursday nights as I settle into a consulting/advising rather than leading role. I'm very encouraged by what I'm seeing so far.
 
 ## Doing
 
