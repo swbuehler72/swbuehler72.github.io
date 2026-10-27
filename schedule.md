@@ -40,6 +40,4 @@ If there is a rocket launch from Kennedy Space Center/Cape Canaveral with viewin
 
 | When           | What |
 |---------------:|------|
-| <nobr>Oct 19 6:30 AM</nobr> | SpaceX Bandwagon-5 from SLC-40. No viewing opportunity at the VC. |
-| <nobr>NET Oct 29</nobr> | ULA Vulcan VC6L Amazon Leo (LV-01) from SLC-41. No time or viewing opportunity announced yet. |
 | <nobr>Nov 24&ndash;28</nobr> | Traveling - Rural Michigan. |
