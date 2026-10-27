@@ -1,0 +1,20 @@
+{%- comment -%}
+  MathJax 3. Kramdown converts $$...$$ to \(...\) (inline) or \[...\] (display),
+  which MathJax picks up. Single-dollar $...$ is also enabled for inline math.
+  Disable on a page with `math: false` in its front matter.
+{%- endcomment -%}
+{%- unless page.math == false -%}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" id="MathJax-script"></script>
+{%- endunless -%}

@@ -46,3 +46,5 @@ minima:
     - title: Flickr
       icon: flickr
       url: "https://www.flickr.com/thestudyofstarlight"
+kramdown:
+  math_engine: mathjax
