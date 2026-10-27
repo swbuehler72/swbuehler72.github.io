@@ -12,7 +12,7 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 
 ## Real-time update[^1]
 
-[^1]: Real-time section requires JavaScript with CORS access to poll my real-time server. 
+[^1]: Real-time section requires JavaScript with CORS access to poll my real-time server. Current location is updated about every five minutes via [Overland](https://overland.p3k.app); latest check-in is provided via [Foursquare Swarm](https://swarmapp.com).
 
 ### Current location
 
