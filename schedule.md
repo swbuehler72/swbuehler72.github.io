@@ -2,15 +2,15 @@
 layout: page
 title: /schedule
 author: Steven Buehler
-date: 2026-10-16
+date: 2026-10-27
 slug: schedule
 ---
 
 Below is a general schedule that may be useful in finding times to meet up.
 
-**What are "Office Hours"?** Office Hours are times set aside outside my home workspace with my laptop or iPad to work on work and/or personal projects. Welcome to drop in to chat and/or co-work. All "office hours" are subject to change or cancellation without notice due to weather, travel, or other priorities. Hours in the theme parks require admission/pass and a park reservtion before 2:00 PM or any time on weekends at Magic Kingdom Park. 
+**What are "Office Hours"?** Office Hours are times set aside outside my home workspace with my laptop or iPad to work on work and/or personal projects. Welcome to drop in to chat and/or co-work.
 
-**All times are U.S. Eastern Time, and mostly approximate.**
+**All times are U.S. Eastern Time, and mostly approximate.** Dates and times are subject to change due to weather or other needs. "Office Hours" in the theme parks requires theme park admission and reservations as appropriate (before 2:00 PM daily for all the parks, and all day for Magic Kingdom&reg; Park on the weekends.)
 
 ## Sunday
 
