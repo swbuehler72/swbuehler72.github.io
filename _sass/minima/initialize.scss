@@ -55,4 +55,9 @@ $on-large:         $on-laptop !default;
 
 table {
   font-size: 0.85em;
+
+  tbody td,
+  tbody th {
+    vertical-align: top;
+  }
 }
