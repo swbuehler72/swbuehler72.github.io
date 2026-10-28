@@ -23,7 +23,7 @@ Inspired by [`https://nownownow.com`](https://nownownow.com).
 <p id="now-checkin" class="now-status">Loading&hellip;</p>
 
 <style>
-  .now-category, .now-when { font-size: 0.85em; opacity: 0.7; }
+  .now-category, .now-activity, .now-when { font-size: 0.85em; opacity: 0.7; }
 </style>
 <script src="{{ '/assets/js/now-live.js' | relative_url }}" defer></script>
 

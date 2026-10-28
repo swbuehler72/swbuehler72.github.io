@@ -44,7 +44,10 @@
       fill('now-location', function () {
         var l = data.location;
         if (!l) return ['Location unavailable.'];
-        return [el('span', l.place || 'Somewhere on the map'), when(l.time, 'as of ')];
+        var out = [el('span', l.place || 'Somewhere on the map')];
+        if (l.activity) out.push(' ', el('span', l.activity.charAt(0).toUpperCase() + l.activity.slice(1), 'now-activity'));
+        out.push(when(l.time, 'as of '));
+        return out;
       });
       fill('now-checkin', function () {
         var c = data.checkin;
