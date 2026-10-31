@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WDW 60-Day Park Hours</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+@page { size: letter landscape; margin: 0.4in; }
+:root {
+  --fg: #1b1d33; --muted: #5d6180; --line: #cfd2e3; --wash: #f3f4fa;
+  --mk: #c2410c; --ep: #0e7490; --hs: #a21caf; --ak: #3f7d20;
+  --party: #b45309; --party-bg: #fdf1dc; --eeh: #3a3fb0; --eeh-bg: #e9eaff;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; color: var(--fg); background: #fff; font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 10.2in; height: 7.7in; display: grid; grid-template-rows: auto auto 1fr auto; gap: 0.1in; overflow: hidden; }
+
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 0.3in; }
+.eyebrow { font-size: 8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 25pt; line-height: 1; margin: 2pt 0 0; }
+.legend { display: grid; grid-template-columns: repeat(2, auto); gap: 3pt 14pt; font-size: 7.6pt; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 5pt; white-space: nowrap; }
+.legend b { font-weight: 700; }
+.pk { font-weight: 700; font-size: 7pt; padding: 0 3pt; border-radius: 2pt; color: #fff; }
+.sw { width: 11pt; height: 8pt; border-radius: 2pt; display: inline-block; }
+
+.dows, .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3pt; }
+.dows div { font-size: 7.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding-left: 4pt; }
+.grid { grid-template-rows: repeat(5, 1fr); min-height: 0; }
+.na { font-size: 7.4pt; color: var(--muted); line-height: 1.25; margin-top: 2pt; }
+.page { break-after: page; }
+.page:last-child { break-after: auto; }
+.day { border: 0.75pt solid var(--line); border-radius: 4pt; padding: 3pt 4pt 4pt; display: flex; flex-direction: column; gap: 1.5pt; min-height: 0; overflow: hidden; }
+.day.hol { background: var(--wash); }
+.dh { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1pt; }
+.n { font-family: "Fraunces", Georgia, serif; font-size: 13pt; font-weight: 500; line-height: 1; }
+.hn { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--eeh); }
+.r { display: grid; grid-template-columns: 17pt 1fr; align-items: center; font-size: 7.8pt; line-height: 1.22; font-variant-numeric: tabular-nums; }
+.r b { font-size: 6.6pt; font-weight: 700; letter-spacing: .02em; }
+.r.mk b { color: var(--mk); } .r.ep b { color: var(--ep); } .r.hs b { color: var(--hs); } .r.ak b { color: var(--ak); }
+.x { margin-left: 17pt; font-size: 6.6pt; font-weight: 600; line-height: 1.2; padding: 0.5pt 3pt; border-radius: 2pt; }
+.x.party { color: var(--party); background: var(--party-bg); }
+.x.eeh { color: var(--eeh); background: var(--eeh-bg); }
+
+footer { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 0.25in; font-size: 7.2pt; line-height: 1.35; color: var(--muted);
+  border-top: 0.75pt solid var(--line); padding-top: 5pt; }
+footer strong { color: var(--fg); }
+</style>
+</head>
+<body>
+<!--PAGE-->
+<div class="page">
+  <header>
+    <div>
+      <div class="eyebrow">Walt Disney World Resort · Theme park hours · next 60 days</div>
+      <h1>__TITLE__</h1>
+    </div>
+    <div class="legend">
+      <span><i class="pk" style="background:var(--mk)">MK</i>Magic Kingdom</span>
+      <span><i class="sw" style="background:var(--party-bg);box-shadow:inset 0 0 0 .75pt var(--party)"></i><em style="font-style:normal"><b>Party</b> or <b>Jollywood</b>: separately ticketed event</em></span>
+      <span><i class="pk" style="background:var(--ep)">EP</i>EPCOT</span>
+      <span><i class="sw" style="background:var(--eeh-bg);box-shadow:inset 0 0 0 .75pt var(--eeh)"></i><em style="font-style:normal"><b>EEH</b>: Extended Evening Hours</em></span>
+      <span><i class="pk" style="background:var(--hs)">HS</i>Hollywood Studios</span>
+      <span>Early Entry opens 30 min before every opening time</span>
+      <span><i class="pk" style="background:var(--ak)">AK</i>Animal Kingdom</span>
+      <span>Times are Eastern</span>
+    </div>
+  </header>
+  <div class="dows"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+  <div class="grid" data-from="__FROM__" data-to="__TO__"></div>
+  <footer>
+    <div><strong>Source:</strong> Walt Disney World Hours &amp; Events Calendar, disneyworld.disney.go.com/calendars, checked for every posted date on __CHECKED__. Disney says all information is subject to change without notice. Check the calendar again before your visit.</div>
+    <div>__NOTES1__</div>
+    <div>__NOTES2__</div>
+  </footer>
+</div>
+<!--/PAGE-->
+<script>
+// Filled in by _park-hours/refresh.py from Disney's Hours & Events Calendar.
+const DAYS = __DAYS__;
+const HOLIDAYS = __HOLIDAYS__;
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const toDate = s => new Date(s + "T00:00:00Z");
+const toISO = d => d.toISOString().slice(0, 10);
+const addDays = (s, n) => toISO(new Date(toDate(s).getTime() + n * 864e5));
+
+const blank = `<div class="day" style="border-style:dashed;opacity:.4"></div>`;
+document.querySelectorAll(".grid").forEach(g => {
+  let html = "", isFirst = true;
+  for (let iso = g.dataset.from; iso <= g.dataset.to; iso = addDays(iso, 1)) {
+    const e = DAYS[iso];
+    if (!e) { html += blank; continue; }
+    const d = toDate(iso), n = d.getUTCDate(), hol = HOLIDAYS[iso];
+    const num = n === 1 || isFirst ? `${MON[d.getUTCMonth()]} ${n}` : n;
+    isFirst = false;
+    const rows = ["mk", "ep", "hs", "ak"].map(p => {
+      const x = e[p + "x"];
+      const cls = x ? (x.startsWith("EEH") ? "eeh" : "party") : "";
+      return `<div class="r ${p}"><b>${p.toUpperCase()}</b><span>${e[p]}</span></div>` +
+        (x ? `<div class="x ${cls}">${x}</div>` : "");
+    }).join("");
+    html += `<div class="day${hol ? " hol" : ""}"><div class="dh"><span class="n">${num}</span>${hol ? `<span class="hn">${hol}</span>` : ""}</div>${rows}</div>`;
+  }
+  g.innerHTML = html;
+});
+</script>
+</body>
+</html>

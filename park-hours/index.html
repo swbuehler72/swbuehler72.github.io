@@ -136,14 +136,16 @@ h1 span { color: var(--accent); }
   <div class="notes">
     <section>
       <h2>Early Entry and evening hours</h2>
-      <p>Early Entry opens 30 minutes before every opening time shown. Extended Evening Hours (EEH) run 9 to 11 PM at EPCOT and 6 to 8 PM at Animal Kingdom on the marked dates, for guests of Disney Deluxe Resorts and other select hotels.</p>
+      <p>Early Entry opens 30 minutes before each opening time shown. Extended Evening Hours (EEH) run on the marked dates, for guests of Disney Deluxe Resorts and other select hotels.</p>
     </section>
     <section>
       <h2>Event nights</h2>
       <ul>
-        <li><strong>Mickey's Very Merry Christmas Party</strong> runs 7 PM to midnight at Magic Kingdom through December 22, and <strong>Mickey's Not-So-Scary Halloween Party</strong> runs the same hours on October 31. The park closes to day guests at 6 PM on those nights.</li>
-        <li><strong>Disney Jollywood Nights</strong> runs 7:30 PM to 12:30 AM at Hollywood Studios through December 23. The park closes to day guests at 7 PM on those nights.</li>
-        <li>All of these need a separate ticket. The <strong>EPCOT International Food &amp; Wine Festival</strong> runs daily through November 21.</li>
+        <li><strong>Mickey&#x27;s Not-So-Scary Halloween Party</strong> runs 7 PM to midnight at Magic Kingdom on October 31.</li>
+        <li><strong>Disney Jollywood Nights</strong> runs 7:30 PM to 12:30 AM at Hollywood Studios through December 23.</li>
+        <li><strong>Mickey&#x27;s Very Merry Christmas Party</strong> runs 7 PM to midnight at Magic Kingdom through December 22.</li>
+        <li>These events need a separate ticket.</li>
+        <li><strong>EPCOT International Food &amp; Wine Festival</strong> runs through November 21.</li>
       </ul>
     </section>
     <section>
@@ -162,75 +164,433 @@ const PARKS = [
   { id: "ak", abbr: "AK", name: "Animal Kingdom" },
 ];
 
-// Source: disneyworld.disney.go.com/calendars/day/YYYY-MM-DD/ (retrieved 2026-10-31).
-// Defaults: EP 9a–9p, HS 9a–9p, AK 8a–6p. Each entry lists only what differs.
-const AS_OF = "2026-10-31";
-const P = "Christmas Party", J = "Jollywood Nights", H = "Halloween Party", A = "EEH 6–8p", E = "EEH 9–11p";
+// Filled in by _park-hours/refresh.py from Disney's Hours & Events Calendar.
 const DAYS = {
-  "2026-10-31": { mk: "8a–6p", mkx: H, hs: "8:30a–9p", ak: "8a–7p" },
-  "2026-11-01": { mk: "9a–10p", ak: "8a–8p" },
-  "2026-11-02": { mk: "9a–10p", ak: "8a–7p", epx: E },
-  "2026-11-03": { mk: "9a–10p" },
-  "2026-11-04": { mk: "9a–10p", akx: A },
-  "2026-11-05": { mk: "9a–10p", ak: "8a–7p" },
-  "2026-11-06": { mk: "9a–10p", ak: "8a–7p" },
-  "2026-11-07": { mk: "9a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–8p" },
-  "2026-11-08": { mk: "8a–6p", mkx: P, ak: "8a–7p" },
-  "2026-11-09": { mk: "8a–6p", mkx: P, epx: E, ak: "8a–7p" },
-  "2026-11-10": { mk: "9a–11p" },
-  "2026-11-11": { mk: "9a–11p", akx: A },
-  "2026-11-12": { mk: "9a–6p", mkx: P },
-  "2026-11-13": { mk: "8a–6p", mkx: P, ak: "8a–7p" },
-  "2026-11-14": { mk: "8a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–8p" },
-  "2026-11-15": { mk: "8a–6p", mkx: P, ak: "9a–8p" },
-  "2026-11-16": { mk: "9a–11p", epx: E, hs: "9a–7p", hsx: J },
-  "2026-11-17": { mk: "9a–6p", mkx: P },
-  "2026-11-18": { mk: "9a–10p", akx: A },
-  "2026-11-19": { mk: "9a–6p", mkx: P },
-  "2026-11-20": { mk: "9a–6p", mkx: P },
-  "2026-11-21": { mk: "9a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–7p" },
-  "2026-11-22": { mk: "9a–10p" },
-  "2026-11-23": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-  "2026-11-24": { mk: "9a–6p", mkx: P },
-  "2026-11-25": { mk: "9a–6p", mkx: P, akx: A },
-  "2026-11-26": { mk: "9a–10p" },
-  "2026-11-27": { mk: "9a–6p", mkx: P },
-  "2026-11-28": { mk: "9a–10p", hs: "9a–7p", hsx: J },
-  "2026-11-29": { mk: "9a–6p", mkx: P },
-  "2026-11-30": { mk: "9a–10p", epx: E },
-  "2026-12-01": { mk: "9a–6p", mkx: P },
-  "2026-12-02": { mk: "9a–10p", akx: A },
-  "2026-12-03": { mk: "9a–6p", mkx: P },
-  "2026-12-04": { mk: "9a–6p", mkx: P },
-  "2026-12-05": { mk: "9a–10p", hs: "9a–7p", hsx: J },
-  "2026-12-06": { mk: "9a–6p", mkx: P },
-  "2026-12-07": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-  "2026-12-08": { mk: "9a–6p", mkx: P },
-  "2026-12-09": { mk: "9a–10p", akx: A },
-  "2026-12-10": { mk: "9a–6p", mkx: P },
-  "2026-12-11": { mk: "9a–6p", mkx: P },
-  "2026-12-12": { mk: "9a–10p", hs: "9a–7p", hsx: J },
-  "2026-12-13": { mk: "9a–6p", mkx: P },
-  "2026-12-14": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-  "2026-12-15": { mk: "9a–6p", mkx: P },
-  "2026-12-16": { mk: "9a–10p", akx: A },
-  "2026-12-17": { mk: "9a–6p", mkx: P },
-  "2026-12-18": { mk: "9a–6p", mkx: P },
-  "2026-12-19": { mk: "9a–10p", hs: "9a–7p", hsx: J },
-  "2026-12-20": { mk: "9a–6p", mkx: P },
-  "2026-12-21": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-  "2026-12-22": { mk: "9a–6p", mkx: P },
-  "2026-12-23": { mk: "9a–10p", hs: "9a–7p", hsx: J, akx: A },
-  "2026-12-24": { mk: "9a–10p" },
-  "2026-12-25": { mk: "9a–10p" },
-  "2026-12-26": { mk: "9a–10p" },
-  "2026-12-27": { mk: "9a–10p" },
-  "2026-12-28": { mk: "9a–10p", epx: E },
-  "2026-12-29": { mk: "9a–10p" },
-  "2026-12-30": { mk: "9a–12a", akx: A },
+  "2026-10-31": {
+    "mk": "8a–6p",
+    "mkx": "Halloween Party",
+    "ep": "9a–9p",
+    "hs": "8:30a–9p",
+    "ak": "8a–7p"
+  },
+  "2026-11-01": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–8p"
+  },
+  "2026-11-02": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–9p",
+    "ak": "8a–7p"
+  },
+  "2026-11-03": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-04": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-11-05": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–7p"
+  },
+  "2026-11-06": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–7p"
+  },
+  "2026-11-07": {
+    "mk": "9a–11p",
+    "ep": "9a–9p",
+    "hs": "8:30a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–8p"
+  },
+  "2026-11-08": {
+    "mk": "8a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–7p"
+  },
+  "2026-11-09": {
+    "mk": "8a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–9p",
+    "ak": "8a–7p"
+  },
+  "2026-11-10": {
+    "mk": "9a–11p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-11": {
+    "mk": "9a–11p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-11-12": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-13": {
+    "mk": "8a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–7p"
+  },
+  "2026-11-14": {
+    "mk": "8a–11p",
+    "ep": "9a–9p",
+    "hs": "8:30a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–8p"
+  },
+  "2026-11-15": {
+    "mk": "8a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "9a–8p"
+  },
+  "2026-11-16": {
+    "mk": "9a–11p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-11-17": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-18": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-11-19": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-20": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-21": {
+    "mk": "9a–11p",
+    "ep": "9a–9p",
+    "hs": "8:30a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–7p"
+  },
+  "2026-11-22": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-23": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-11-24": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-25": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-11-26": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-27": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-28": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-11-29": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-11-30": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-01": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-02": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-12-03": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-04": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-05": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-12-06": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-07": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-12-08": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-09": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-12-10": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-11": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-12": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-12-13": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-14": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-12-15": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-16": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-12-17": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-18": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-19": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-12-20": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-21": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p"
+  },
+  "2026-12-22": {
+    "mk": "9a–6p",
+    "mkx": "Christmas Party",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-23": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–7p",
+    "hsx": "Jollywood Nights",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  },
+  "2026-12-24": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-25": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-26": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-27": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-28": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "epx": "EEH 9–11p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-29": {
+    "mk": "9a–10p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2026-12-30": {
+    "mk": "9a–12a",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p",
+    "akx": "EEH 6–8p"
+  }
 };
-const DEF = { ep: "9a–9p", hs: "9a–9p", ak: "8a–6p" };
-const HOLIDAYS = { "2026-10-31": "Halloween", "2026-11-11": "Veterans Day", "2026-11-26": "Thanksgiving", "2026-12-24": "Christmas Eve", "2026-12-25": "Christmas", "2026-12-31": "New Year's Eve" };
+const HOLIDAYS = {"2026-10-31": "Halloween", "2026-11-11": "Veterans Day", "2026-11-26": "Thanksgiving", "2026-12-24": "Christmas Eve", "2026-12-25": "Christmas"};
 const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const toDate = s => new Date(s + "T00:00:00Z");
 const toISO = d => d.toISOString().slice(0, 10);
@@ -240,7 +600,7 @@ function hoursFor(iso, park) {
   const e = DAYS[iso];
   const tag = e[park + "x"] || "";
   const kind = tag ? (tag.startsWith("EEH") ? "new" : "flag") : "";
-  return { text: e[park] || DEF[park], tag, kind };
+  return { text: e[park], tag, kind };
 }
 // Today's date at the parks, so the calendar stays correct for viewers in other time zones
 const parkToday = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
