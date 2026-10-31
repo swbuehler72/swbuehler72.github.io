@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Daily November and December 2026 hours for all four Walt Disney World theme parks, from Disney's official calendar.">
-<title>WDW Nov–Dec 2026 Hours</title>
+<meta name="description" content="Daily hours for all four Walt Disney World theme parks for the next 60 days, from Disney's official calendar.">
+<title>WDW 60-Day Park Hours</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -68,9 +68,9 @@ h1 span { color: var(--accent); }
 
 .grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
 .dow { font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 0 8px 2px; }
-.months { display: grid; gap: 28px; }
-.month { display: grid; gap: 10px; min-width: 0; }
-.month h2 { font-family: var(--f-display); font-weight: 500; font-size: 26px; line-height: 1.1; margin: 0; }
+.range { font-family: var(--f-display); font-weight: 500; font-size: 22px; line-height: 1.2; margin: 0; }
+.mon { display: none; font-size: 15px; }
+.mon.show { display: inline; }
 .na { margin: 0; font-size: 12px; color: var(--muted); }
 .day { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 8px 10px; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .day.blank { background: transparent; border-style: dashed; opacity: .5; }
@@ -105,6 +105,7 @@ h1 span { color: var(--accent); }
   .day { grid-template-columns: 70px 1fr; align-items: start; }
   .dhead { flex-direction: column; align-items: flex-start; gap: 2px; }
   .dname { display: block; }
+  .mon { display: inline; }
   .hol { text-align: left; }
   .rows { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 8px; }
   .row { font-size: 12.5px; grid-template-columns: 30px 1fr; }
@@ -117,8 +118,9 @@ h1 span { color: var(--accent); }
 <div class="wrap">
   <header>
     <div class="eyebrow">Walt Disney World · Orlando · unofficial guide</div>
-    <h1>Theme park hours, <span>November and December 2026</span></h1>
-    <p class="sub">Daily opening and closing times for all four parks, taken from Disney's official Hours &amp; Events Calendar. Disney posts 60 days ahead, so December 31 is not available yet. Hours are subject to change, so check its calendar again before you go.</p>
+    <h1>Theme park hours, <span>next 60 days</span></h1>
+    <p class="range" id="range"></p>
+    <p class="sub">Daily opening and closing times for all four parks, taken from Disney's official Hours &amp; Events Calendar. Disney posts hours 60 days ahead, so this calendar runs from today through the last posted date. Hours are subject to change, so check its calendar again before you go.</p>
   </header>
 
   <div class="controls">
@@ -139,15 +141,15 @@ h1 span { color: var(--accent); }
     <section>
       <h2>Event nights</h2>
       <ul>
-        <li><strong>Mickey's Very Merry Christmas Party</strong> runs 7 PM to midnight at Magic Kingdom through December 22. The park closes to day guests at 6 PM on those nights.</li>
+        <li><strong>Mickey's Very Merry Christmas Party</strong> runs 7 PM to midnight at Magic Kingdom through December 22, and <strong>Mickey's Not-So-Scary Halloween Party</strong> runs the same hours on October 31. The park closes to day guests at 6 PM on those nights.</li>
         <li><strong>Disney Jollywood Nights</strong> runs 7:30 PM to 12:30 AM at Hollywood Studios through December 23. The park closes to day guests at 7 PM on those nights.</li>
-        <li>Both need a separate ticket. The <strong>EPCOT International Food &amp; Wine Festival</strong> runs daily through November 21.</li>
+        <li>All of these need a separate ticket. The <strong>EPCOT International Food &amp; Wine Festival</strong> runs daily through November 21.</li>
       </ul>
     </section>
     <section>
       <h2>Source</h2>
       <p><a href="https://disneyworld.disney.go.com/calendars/" target="_blank" rel="noopener">Walt Disney World Hours &amp; Events Calendar</a>, checked for every posted date on October 31, 2026.</p>
-      <p style="margin-top:6px"><a href="WDW-Nov-Dec-2026-Park-Hours.pdf">Download the printable PDF</a> (two letter-size pages).</p>
+      <p style="margin-top:6px"><a href="WDW-Park-Hours-60-Day.pdf">Download the printable PDF</a> (two letter-size pages).</p>
     </section>
   </div>
 </div>
@@ -160,84 +162,88 @@ const PARKS = [
   { id: "ak", abbr: "AK", name: "Animal Kingdom" },
 ];
 
-// Source: disneyworld.disney.go.com/calendars/day/2026-MM-DD/ (retrieved 2026-10-31).
+// Source: disneyworld.disney.go.com/calendars/day/YYYY-MM-DD/ (retrieved 2026-10-31).
 // Defaults: EP 9a–9p, HS 9a–9p, AK 8a–6p. Each entry lists only what differs.
-// Disney posts 60 days ahead, so Dec 31 has no entry yet.
-const P = "Christmas Party", J = "Jollywood Nights", A = "EEH 6–8p", E = "EEH 9–11p";
-const MONTHS = [
-  { name: "November 2026", y: 2026, m: 10, days: 30, holidays: { 11: "Veterans Day", 26: "Thanksgiving" }, D: {
-    1:  { mk: "9a–10p", ak: "8a–8p" },
-    2:  { mk: "9a–10p", ak: "8a–7p", epx: E },
-    3:  { mk: "9a–10p" },
-    4:  { mk: "9a–10p", akx: A },
-    5:  { mk: "9a–10p", ak: "8a–7p" },
-    6:  { mk: "9a–10p", ak: "8a–7p" },
-    7:  { mk: "9a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–8p" },
-    8:  { mk: "8a–6p", mkx: P, ak: "8a–7p" },
-    9:  { mk: "8a–6p", mkx: P, epx: E, ak: "8a–7p" },
-    10: { mk: "9a–11p" },
-    11: { mk: "9a–11p", akx: A },
-    12: { mk: "9a–6p", mkx: P },
-    13: { mk: "8a–6p", mkx: P, ak: "8a–7p" },
-    14: { mk: "8a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–8p" },
-    15: { mk: "8a–6p", mkx: P, ak: "9a–8p" },
-    16: { mk: "9a–11p", epx: E, hs: "9a–7p", hsx: J },
-    17: { mk: "9a–6p", mkx: P },
-    18: { mk: "9a–10p", akx: A },
-    19: { mk: "9a–6p", mkx: P },
-    20: { mk: "9a–6p", mkx: P },
-    21: { mk: "9a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–7p" },
-    22: { mk: "9a–10p" },
-    23: { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-    24: { mk: "9a–6p", mkx: P },
-    25: { mk: "9a–6p", mkx: P, akx: A },
-    26: { mk: "9a–10p" },
-    27: { mk: "9a–6p", mkx: P },
-    28: { mk: "9a–10p", hs: "9a–7p", hsx: J },
-    29: { mk: "9a–6p", mkx: P },
-    30: { mk: "9a–10p", epx: E },
-  } },
-  { name: "December 2026", y: 2026, m: 11, days: 31, holidays: { 24: "Christmas Eve", 25: "Christmas", 31: "New Year's Eve" }, D: {
-    1:  { mk: "9a–6p", mkx: P },
-    2:  { mk: "9a–10p", akx: A },
-    3:  { mk: "9a–6p", mkx: P },
-    4:  { mk: "9a–6p", mkx: P },
-    5:  { mk: "9a–10p", hs: "9a–7p", hsx: J },
-    6:  { mk: "9a–6p", mkx: P },
-    7:  { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-    8:  { mk: "9a–6p", mkx: P },
-    9:  { mk: "9a–10p", akx: A },
-    10: { mk: "9a–6p", mkx: P },
-    11: { mk: "9a–6p", mkx: P },
-    12: { mk: "9a–10p", hs: "9a–7p", hsx: J },
-    13: { mk: "9a–6p", mkx: P },
-    14: { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-    15: { mk: "9a–6p", mkx: P },
-    16: { mk: "9a–10p", akx: A },
-    17: { mk: "9a–6p", mkx: P },
-    18: { mk: "9a–6p", mkx: P },
-    19: { mk: "9a–10p", hs: "9a–7p", hsx: J },
-    20: { mk: "9a–6p", mkx: P },
-    21: { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
-    22: { mk: "9a–6p", mkx: P },
-    23: { mk: "9a–10p", hs: "9a–7p", hsx: J, akx: A },
-    24: { mk: "9a–10p" },
-    25: { mk: "9a–10p" },
-    26: { mk: "9a–10p" },
-    27: { mk: "9a–10p" },
-    28: { mk: "9a–10p", epx: E },
-    29: { mk: "9a–10p" },
-    30: { mk: "9a–12a", akx: A },
-  } },
-];
+const AS_OF = "2026-10-31";
+const P = "Christmas Party", J = "Jollywood Nights", H = "Halloween Party", A = "EEH 6–8p", E = "EEH 9–11p";
+const DAYS = {
+  "2026-10-31": { mk: "8a–6p", mkx: H, hs: "8:30a–9p", ak: "8a–7p" },
+  "2026-11-01": { mk: "9a–10p", ak: "8a–8p" },
+  "2026-11-02": { mk: "9a–10p", ak: "8a–7p", epx: E },
+  "2026-11-03": { mk: "9a–10p" },
+  "2026-11-04": { mk: "9a–10p", akx: A },
+  "2026-11-05": { mk: "9a–10p", ak: "8a–7p" },
+  "2026-11-06": { mk: "9a–10p", ak: "8a–7p" },
+  "2026-11-07": { mk: "9a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–8p" },
+  "2026-11-08": { mk: "8a–6p", mkx: P, ak: "8a–7p" },
+  "2026-11-09": { mk: "8a–6p", mkx: P, epx: E, ak: "8a–7p" },
+  "2026-11-10": { mk: "9a–11p" },
+  "2026-11-11": { mk: "9a–11p", akx: A },
+  "2026-11-12": { mk: "9a–6p", mkx: P },
+  "2026-11-13": { mk: "8a–6p", mkx: P, ak: "8a–7p" },
+  "2026-11-14": { mk: "8a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–8p" },
+  "2026-11-15": { mk: "8a–6p", mkx: P, ak: "9a–8p" },
+  "2026-11-16": { mk: "9a–11p", epx: E, hs: "9a–7p", hsx: J },
+  "2026-11-17": { mk: "9a–6p", mkx: P },
+  "2026-11-18": { mk: "9a–10p", akx: A },
+  "2026-11-19": { mk: "9a–6p", mkx: P },
+  "2026-11-20": { mk: "9a–6p", mkx: P },
+  "2026-11-21": { mk: "9a–11p", hs: "8:30a–7p", hsx: J, ak: "8a–7p" },
+  "2026-11-22": { mk: "9a–10p" },
+  "2026-11-23": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
+  "2026-11-24": { mk: "9a–6p", mkx: P },
+  "2026-11-25": { mk: "9a–6p", mkx: P, akx: A },
+  "2026-11-26": { mk: "9a–10p" },
+  "2026-11-27": { mk: "9a–6p", mkx: P },
+  "2026-11-28": { mk: "9a–10p", hs: "9a–7p", hsx: J },
+  "2026-11-29": { mk: "9a–6p", mkx: P },
+  "2026-11-30": { mk: "9a–10p", epx: E },
+  "2026-12-01": { mk: "9a–6p", mkx: P },
+  "2026-12-02": { mk: "9a–10p", akx: A },
+  "2026-12-03": { mk: "9a–6p", mkx: P },
+  "2026-12-04": { mk: "9a–6p", mkx: P },
+  "2026-12-05": { mk: "9a–10p", hs: "9a–7p", hsx: J },
+  "2026-12-06": { mk: "9a–6p", mkx: P },
+  "2026-12-07": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
+  "2026-12-08": { mk: "9a–6p", mkx: P },
+  "2026-12-09": { mk: "9a–10p", akx: A },
+  "2026-12-10": { mk: "9a–6p", mkx: P },
+  "2026-12-11": { mk: "9a–6p", mkx: P },
+  "2026-12-12": { mk: "9a–10p", hs: "9a–7p", hsx: J },
+  "2026-12-13": { mk: "9a–6p", mkx: P },
+  "2026-12-14": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
+  "2026-12-15": { mk: "9a–6p", mkx: P },
+  "2026-12-16": { mk: "9a–10p", akx: A },
+  "2026-12-17": { mk: "9a–6p", mkx: P },
+  "2026-12-18": { mk: "9a–6p", mkx: P },
+  "2026-12-19": { mk: "9a–10p", hs: "9a–7p", hsx: J },
+  "2026-12-20": { mk: "9a–6p", mkx: P },
+  "2026-12-21": { mk: "9a–10p", epx: E, hs: "9a–7p", hsx: J },
+  "2026-12-22": { mk: "9a–6p", mkx: P },
+  "2026-12-23": { mk: "9a–10p", hs: "9a–7p", hsx: J, akx: A },
+  "2026-12-24": { mk: "9a–10p" },
+  "2026-12-25": { mk: "9a–10p" },
+  "2026-12-26": { mk: "9a–10p" },
+  "2026-12-27": { mk: "9a–10p" },
+  "2026-12-28": { mk: "9a–10p", epx: E },
+  "2026-12-29": { mk: "9a–10p" },
+  "2026-12-30": { mk: "9a–12a", akx: A },
+};
 const DEF = { ep: "9a–9p", hs: "9a–9p", ak: "8a–6p" };
+const HOLIDAYS = { "2026-10-31": "Halloween", "2026-11-11": "Veterans Day", "2026-11-26": "Thanksgiving", "2026-12-24": "Christmas Eve", "2026-12-25": "Christmas", "2026-12-31": "New Year's Eve" };
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const toDate = s => new Date(s + "T00:00:00Z");
+const toISO = d => d.toISOString().slice(0, 10);
+const addDays = (s, n) => toISO(new Date(toDate(s).getTime() + n * 864e5));
 
-function hoursFor(month, park, d) {
-  const e = month.D[d];
+function hoursFor(iso, park) {
+  const e = DAYS[iso];
   const tag = e[park + "x"] || "";
   const kind = tag ? (tag.startsWith("EEH") ? "new" : "flag") : "";
   return { text: e[park] || DEF[park], tag, kind };
 }
+// Today's date at the parks, so the calendar stays correct for viewers in other time zones
+const parkToday = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
 
 let shown = new Set(PARKS.map(p => p.id));
 try { const s = JSON.parse(localStorage.getItem("wdw-parks")); if (Array.isArray(s) && s.length) shown = new Set(s); } catch (e) {}
@@ -258,27 +264,35 @@ PARKS.forEach(p => {
 
 const DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 const DOW_LONG = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-function monthHTML(month) {
-  const first = new Date(month.y, month.m, 1).getDay();
-  let html = DOW.map(d => `<div class="dow">${d}</div>`).join("");
-  for (let i = 0; i < first; i++) html += `<div class="day blank"></div>`;
-  for (let d = 1; d <= month.days; d++) {
-    const wd = (first + d - 1) % 7, hol = month.holidays[d];
-    const rows = !month.D[d] ? `<p class="na">Not posted yet</p>` : PARKS.filter(p => shown.has(p.id)).map(p => {
-      const h = hoursFor(month, p.id, d);
-      return `<div class="row ${h.kind}" style="--c:var(--${p.id})" title="${p.name}"><b>${p.abbr}</b><span class="t">${h.text}</span>${h.tag ? `<span class="tag">${h.tag}</span>` : ""}</div>`;
-    }).join("");
-    html += `<div class="day${hol ? " holiday" : ""}">
-      <div class="dhead"><span class="num">${d}</span><span class="dname">${DOW_LONG[wd]}</span>${hol ? `<span class="hol">${hol}</span>` : ""}</div>
-      <div class="rows">${rows}</div></div>`;
-  }
-  const trailing = (7 - (first + month.days) % 7) % 7;
-  for (let i = 0; i < trailing; i++) html += `<div class="day blank"></div>`;
-  return `<section class="month"><h2>${month.name}</h2><div class="grid" aria-label="${month.name} calendar">${html}</div></section>`;
+function dayHTML(iso, start) {
+  const d = toDate(iso), n = d.getUTCDate(), hol = HOLIDAYS[iso];
+  const rows = PARKS.filter(p => shown.has(p.id)).map(p => {
+    const h = hoursFor(iso, p.id);
+    return `<div class="row ${h.kind}" style="--c:var(--${p.id})" title="${p.name}"><b>${p.abbr}</b><span class="t">${h.text}</span>${h.tag ? `<span class="tag">${h.tag}</span>` : ""}</div>`;
+  }).join("");
+  return `<div class="day${hol ? " holiday" : ""}">
+    <div class="dhead"><span class="num"><span class="mon${n === 1 || iso === start ? " show" : ""}">${MON[d.getUTCMonth()]} </span>${n}</span><span class="dname">${DOW_LONG[d.getUTCDay()]}</span>${hol ? `<span class="hol">${hol}</span>` : ""}</div>
+    <div class="rows">${rows}</div></div>`;
 }
 function render() {
   PARKS.forEach(p => document.getElementById("chip-" + p.id).setAttribute("aria-pressed", shown.has(p.id)));
-  document.getElementById("months").innerHTML = MONTHS.map(monthHTML).join("");
+  const posted = Object.keys(DAYS).sort(), end = posted[posted.length - 1];
+  const start = parkToday() > posted[0] ? parkToday() : posted[0];
+  const label = iso => `${MON[toDate(iso).getUTCMonth()]} ${toDate(iso).getUTCDate()}`;
+  const months = document.getElementById("months"), range = document.getElementById("range");
+  if (start > end) {
+    range.textContent = "";
+    months.innerHTML = `<p class="na">These hours are out of date. See Disney's calendar for current hours.</p>`;
+    return;
+  }
+  range.textContent = `${label(start)} – ${label(end)}, ${toDate(end).getUTCFullYear()}`;
+  let html = DOW.map(d => `<div class="dow">${d}</div>`).join("");
+  let iso = addDays(start, -toDate(start).getUTCDay());
+  const last = addDays(end, 6 - toDate(end).getUTCDay());
+  for (; iso <= last; iso = addDays(iso, 1)) {
+    html += iso >= start && iso <= end ? dayHTML(iso, start) : `<div class="day blank"></div>`;
+  }
+  months.innerHTML = `<div class="grid" aria-label="Park hours calendar">${html}</div>`;
 }
 render();
 </script>
