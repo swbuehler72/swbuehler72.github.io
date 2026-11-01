@@ -36,12 +36,12 @@ h1 { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 25pt;
 .dh { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1pt; }
 .n { font-family: "Fraunces", Georgia, serif; font-size: 13pt; font-weight: 500; line-height: 1; }
 .hn { font-size: 6.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--eeh); }
-.r { display: grid; grid-template-columns: 17pt 1fr; align-items: center; font-size: 7.8pt; line-height: 1.22; font-variant-numeric: tabular-nums; }
+.r { display: grid; grid-template-columns: 17pt auto 1fr; align-items: center; font-size: 7.8pt; line-height: 1.22; font-variant-numeric: tabular-nums; }
 .r b { font-size: 6.6pt; font-weight: 700; letter-spacing: .02em; }
 .r.mk b { color: var(--mk); } .r.ep b { color: var(--ep); } .r.hs b { color: var(--hs); } .r.ak b { color: var(--ak); }
 .x { margin-left: 17pt; font-size: 6.6pt; font-weight: 600; line-height: 1.2; padding: 0.5pt 3pt; border-radius: 2pt; }
 .x.party { color: var(--party); background: var(--party-bg); }
-.x.eeh { color: var(--eeh); background: var(--eeh-bg); }
+.x.eeh { color: var(--eeh); background: var(--eeh-bg); margin-left: 5pt; justify-self: start; white-space: nowrap; }
 
 footer { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 0.25in; font-size: 7.2pt; line-height: 1.35; color: var(--muted);
   border-top: 0.75pt solid var(--line); padding-top: 5pt; }
@@ -95,15 +95,17 @@ document.querySelectorAll(".grid").forEach(g => {
     const num = n === 1 || isFirst ? `${MON[d.getUTCMonth()]} ${n}` : n;
     isFirst = false;
     const rows = ["mk", "ep", "hs", "ak"].map(p => {
-      const x = e[p + "x"];
-      const cls = x ? (x.startsWith("EEH") ? "eeh" : "party") : "";
-      return `<div class="r ${p}"><b>${p.toUpperCase()}</b><span>${e[p]}</span></div>` +
-        (x ? `<div class="x ${cls}">${x}</div>` : "");
+      // Evening hours fit beside the park's hours; events take their own line
+      const tags = (e[p + "x"] || "").split(" · ").filter(Boolean);
+      const eeh = tags.find(t => t.startsWith("EEH")), events = tags.filter(t => t !== eeh);
+      return `<div class="r ${p}"><b>${p.toUpperCase()}</b><span>${e[p]}</span>${eeh ? `<div class="x eeh">${eeh}</div>` : ""}</div>` +
+        events.map(t => `<div class="x party">${t}</div>`).join("");
     }).join("");
     html += `<div class="day${hol ? " hol" : ""}"><div class="dh"><span class="n">${num}</span>${hol ? `<span class="hn">${hol}</span>` : ""}</div>${rows}</div>`;
   }
   g.innerHTML = html;
 });
+document.documentElement.dataset.overflow = [...document.querySelectorAll(".day")].filter(d => d.scrollHeight > d.clientHeight + 1).length;
 </script>
 </body>
 </html>

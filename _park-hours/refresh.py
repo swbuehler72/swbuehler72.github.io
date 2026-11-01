@@ -196,6 +196,12 @@ def build_pdf(days, checked):
                         f"--user-data-dir={tmp}/profile", f"--print-to-pdf={target}", f"file://{src}"],
                        check=True, capture_output=True, timeout=120)
         raw = target.read_bytes()
+        dom = subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--virtual-time-budget=8000",
+                              f"--user-data-dir={tmp}/profile", "--dump-dom", f"file://{src}"],
+                             check=True, capture_output=True, text=True, timeout=120).stdout
+        crowded = re.search(r'data-overflow="(\d+)"', dom)
+        if not crowded or crowded.group(1) != "0":
+            print(f"WARNING: PDF has {crowded.group(1) if crowded else 'an unknown number of'} crowded day cells. Check the layout.")
         count = len(re.findall(rb"/Type\s*/Page[^s]", raw))
         if count != 2:
             raise SystemExit(f"PDF came out at {count} pages, expected 2. Nothing changed.")
