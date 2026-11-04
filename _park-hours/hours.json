@@ -1,37 +1,6 @@
 {
- "checked": "2026-11-03",
+ "checked": "2026-11-04",
  "days": {
-  "2026-11-03": {
-   "parks": {
-    "mk": {
-     "hours": "9a–10p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–6p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
   "2026-11-04": {
    "parks": {
     "mk": {
@@ -1798,6 +1767,35 @@
      "eeh": null,
      "ticketed": null,
      "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-03": {
+   "parks": {
+    "mk": {
+     "hours": "9a–10p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–7p",
+     "eeh": null,
+     "ticketed": "7:30p–12:30a",
+     "event": "Disney Jollywood Nights"
     },
     "ak": {
      "hours": "8a–6p",
