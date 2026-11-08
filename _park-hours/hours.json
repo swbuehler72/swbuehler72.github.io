@@ -1,68 +1,6 @@
 {
- "checked": "2026-11-06",
+ "checked": "2026-11-08",
  "days": {
-  "2026-11-06": {
-   "parks": {
-    "mk": {
-     "hours": "9a–10p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–7p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
-  "2026-11-07": {
-   "parks": {
-    "mk": {
-     "hours": "9a–11p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "8:30a–7p",
-     "eeh": null,
-     "ticketed": "7:30p–12:30a",
-     "event": "Disney Jollywood Nights"
-    },
-    "ak": {
-     "hours": "8a–8p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
   "2026-11-08": {
    "parks": {
     "mk": {
@@ -500,7 +438,7 @@
   "2026-11-22": {
    "parks": {
     "mk": {
-     "hours": "9a–10p",
+     "hours": "9a–11p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -518,7 +456,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–7p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -529,7 +467,7 @@
   "2026-11-23": {
    "parks": {
     "mk": {
-     "hours": "9a–10p",
+     "hours": "9a–11p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -541,7 +479,7 @@
      "event": null
     },
     "hs": {
-     "hours": "9a–7p",
+     "hours": "8:30a–7p",
      "eeh": null,
      "ticketed": "7:30p–12:30a",
      "event": "Disney Jollywood Nights"
@@ -558,7 +496,7 @@
   "2026-11-24": {
    "parks": {
     "mk": {
-     "hours": "9a–6p",
+     "hours": "8a–6p",
      "eeh": null,
      "ticketed": "7p–12a",
      "event": "Mickey's Very Merry Christmas Party"
@@ -570,13 +508,13 @@
      "event": null
     },
     "hs": {
-     "hours": "9a–9p",
+     "hours": "8:30a–9p",
      "eeh": null,
      "ticketed": null,
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -616,7 +554,7 @@
   "2026-11-26": {
    "parks": {
     "mk": {
-     "hours": "9a–10p",
+     "hours": "8a–11p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -674,7 +612,7 @@
   "2026-11-28": {
    "parks": {
     "mk": {
-     "hours": "9a–10p",
+     "hours": "9a–11p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1792,6 +1730,64 @@
      "eeh": null,
      "ticketed": "7:30p–12:30a",
      "event": "Disney Jollywood Nights"
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-06": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": "9p–11p",
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-07": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "10a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
     },
     "ak": {
      "hours": "8a–6p",
