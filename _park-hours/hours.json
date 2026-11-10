@@ -1,37 +1,6 @@
 {
- "checked": "2026-11-09",
+ "checked": "2026-11-10",
  "days": {
-  "2026-11-09": {
-   "parks": {
-    "mk": {
-     "hours": "8a–6p",
-     "eeh": null,
-     "ticketed": "7p–12a",
-     "event": "Mickey's Very Merry Christmas Party"
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": "9p–11p",
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–7p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
   "2026-11-10": {
    "parks": {
     "mk": {
@@ -454,7 +423,7 @@
      "event": "Disney Jollywood Nights"
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1777,6 +1746,35 @@
     },
     "ep": {
      "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-09": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "10a–9p",
      "eeh": null,
      "ticketed": null,
      "event": null
