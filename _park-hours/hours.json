@@ -1,37 +1,6 @@
 {
- "checked": "2026-11-11",
+ "checked": "2026-11-12",
  "days": {
-  "2026-11-11": {
-   "parks": {
-    "mk": {
-     "hours": "9a–11p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–6p",
-     "eeh": "6p–8p",
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
   "2026-11-12": {
    "parks": {
     "mk": {
@@ -1774,6 +1743,35 @@
     "ep": {
      "hours": "10a–9p",
      "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-11": {
+   "parks": {
+    "mk": {
+     "hours": "9a–10p",
+     "eeh": null,
+     "ticketed": "10p–1a",
+     "event": "Disney After Hours at Magic Kingdom Park"
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": "9p–11p",
      "ticketed": null,
      "event": null
     },
