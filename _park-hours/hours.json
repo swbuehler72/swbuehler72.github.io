@@ -1,37 +1,6 @@
 {
- "checked": "2026-11-12",
+ "checked": "2026-11-13",
  "days": {
-  "2026-11-12": {
-   "parks": {
-    "mk": {
-     "hours": "9a–6p",
-     "eeh": null,
-     "ticketed": "7p–12a",
-     "event": "Mickey's Very Merry Christmas Party"
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–6p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
   "2026-11-13": {
    "parks": {
     "mk": {
@@ -1772,6 +1741,35 @@
     "ep": {
      "hours": "9a–9p",
      "eeh": "9p–11p",
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-12": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": null,
      "ticketed": null,
      "event": null
     },
