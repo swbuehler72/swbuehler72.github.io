@@ -1,99 +1,6 @@
 {
- "checked": "2026-11-16",
+ "checked": "2026-11-19",
  "days": {
-  "2026-11-16": {
-   "parks": {
-    "mk": {
-     "hours": "9a–11p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": "9p–11p",
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–7p",
-     "eeh": null,
-     "ticketed": "7:30p–12:30a",
-     "event": "Disney Jollywood Nights"
-    },
-    "ak": {
-     "hours": "8a–6p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
-  "2026-11-17": {
-   "parks": {
-    "mk": {
-     "hours": "9a–6p",
-     "eeh": null,
-     "ticketed": "7p–12a",
-     "event": "Mickey's Very Merry Christmas Party"
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–6p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
-  "2026-11-18": {
-   "parks": {
-    "mk": {
-     "hours": "9a–10p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–6p",
-     "eeh": "6p–8p",
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": [
-    "EPCOT International Food & Wine Festival"
-   ]
-  },
   "2026-11-19": {
    "parks": {
     "mk": {
@@ -1764,6 +1671,93 @@
     "ep": {
      "hours": "9a–9p",
      "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-16": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": "9:30p–12:30a",
+     "event": "Disney After Hours at Disney's Hollywood Studios"
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-17": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-18": {
+   "parks": {
+    "mk": {
+     "hours": "9a–10p",
+     "eeh": null,
+     "ticketed": "10p–1a",
+     "event": "Disney After Hours at Magic Kingdom Park"
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": "9p–11p",
      "ticketed": null,
      "event": null
     },
