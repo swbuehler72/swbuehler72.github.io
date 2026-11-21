@@ -24,10 +24,21 @@ section { border-top: 1px solid var(--line); padding-top: 20px; }
 h2 { font: 500 20px/1.2 "Fraunces", Georgia, serif; margin: 0 0 8px; }
 ul { margin: 0; padding-left: 20px; }
 footer { font-size: 14px; color: var(--muted); }
+.notice { margin: 0; padding: 10px 14px; border-radius: 8px; border: 1px solid #e8c48a; background: #fdf1dc; color: #5c3305; font-size: 15px; line-height: 1.45; }
+.notice a { color: inherit; font-weight: 600; }
+@media (prefers-color-scheme: dark) { .notice { background: #3a2c16; border-color: #6b4f22; color: #f5d9a8; } }
 </style>
 </head>
 <body>
 <main>
+  <p class="notice" role="status" data-until="2026-11-28">Updates may be delayed November 24–28 because of personal travel. For the latest hours, check <a href="https://disneyworld.disney.go.com/calendars/">Disney's official calendar</a>.</p>
+  <script>
+    // Temporary travel notice: hidden automatically after its last day (Eastern time)
+    (() => {
+      const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+      document.querySelectorAll(".notice[data-until]").forEach(n => { if (today > n.dataset.until) n.remove(); });
+    })();
+  </script>
   <div>
     <p class="eyebrow">Steven Buehler has moved</p>
     <h1>I've moved to <a href="https://www.swb72.us">EPWOT: The Experimental Prototype Website of Tomorrow</a></h1>
