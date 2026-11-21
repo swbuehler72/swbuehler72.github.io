@@ -10,5 +10,11 @@
     "start": "2027-01-15",
     "end": "2027-03-01",
     "source": "https://disneyworld.disney.go.com/events-tours/epcot/epcot-international-festival-of-the-arts/"
+  },
+  {
+    "name": "EPCOT International Flower & Garden Festival",
+    "start": "2027-03-10",
+    "end": "2027-05-31",
+    "source": "https://disneyworld.disney.go.com/events-tours/epcot/epcot-international-flower-and-garden-festival/"
   }
 ]
