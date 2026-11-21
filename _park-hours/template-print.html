@@ -40,7 +40,7 @@ h1 { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 25pt;
 .r b { font-size: 6.6pt; font-weight: 700; letter-spacing: .02em; }
 .r.mk b { color: var(--mk); } .r.ep b { color: var(--ep); } .r.hs b { color: var(--hs); } .r.ak b { color: var(--ak); }
 .x { margin-left: 17pt; font-size: 6.6pt; font-weight: 600; line-height: 1.2; padding: 0.5pt 3pt; border-radius: 2pt; }
-.x.party { color: var(--party); background: var(--party-bg); }
+.x.party { color: var(--party); background: var(--party-bg); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .x.eeh { color: var(--eeh); background: var(--eeh-bg); margin-left: 5pt; justify-self: start; white-space: nowrap; }
 
 footer { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 0.25in; font-size: 7.2pt; line-height: 1.35; color: var(--muted);
@@ -58,7 +58,7 @@ footer strong { color: var(--fg); }
     </div>
     <div class="legend">
       <span><i class="pk" style="background:var(--mk)">MK</i>Magic Kingdom</span>
-      <span><i class="sw" style="background:var(--party-bg);box-shadow:inset 0 0 0 .75pt var(--party)"></i><em style="font-style:normal"><b>Party</b> or <b>Jollywood</b>: separately ticketed event</em></span>
+      <span><i class="sw" style="background:var(--party-bg);box-shadow:inset 0 0 0 .75pt var(--party)"></i><em style="font-style:normal">Separately ticketed event</em></span>
       <span><i class="pk" style="background:var(--ep)">EP</i>EPCOT</span>
       <span><i class="sw" style="background:var(--eeh-bg);box-shadow:inset 0 0 0 .75pt var(--eeh)"></i><em style="font-style:normal"><b>EEH</b>: Extended Evening Hours</em></span>
       <span><i class="pk" style="background:var(--hs)">HS</i>Hollywood Studios</span>

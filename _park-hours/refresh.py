@@ -36,6 +36,17 @@ EVENT_TAGS = {
     "Mickey's Not-So-Scary Halloween Party": "Halloween Party",
     "Disney Jollywood Nights": "Jollywood Nights",
 }
+
+
+def event_tag(name):
+    """Short label for a ticketed event; After Hours runs at several parks under longer names."""
+    if name in EVENT_TAGS:
+        return EVENT_TAGS[name]
+    if name.startswith("Disney After Hours"):
+        return "After Hours"
+    return name
+
+
 FIXED_HOLIDAYS = {"01-01": "New Year's Day", "07-04": "Independence Day", "10-31": "Halloween", "11-11": "Veterans Day",
                   "12-24": "Christmas Eve", "12-25": "Christmas", "12-31": "New Year's Eve"}
 
@@ -86,7 +97,7 @@ def warnings_for(days):
         for park, p in day["parks"].items():
             if not p["hours"]:
                 out.append(f"{iso} {park}: no park hours listed")
-            if p["event"] and p["event"] not in EVENT_TAGS:
+            if p["event"] and event_tag(p["event"]) == p["event"]:
                 out.append(f"{iso} {park}: new ticketed event, shown by its full name: {p['event']}")
     return out
 
@@ -100,7 +111,7 @@ def page_table(days):
             row[park] = p["hours"] or "See Disney"
             tags = []
             if p["event"]:
-                tags.append(EVENT_TAGS.get(p["event"], p["event"]))
+                tags.append(event_tag(p["event"]))
             if p["eeh"]:
                 tags.append("EEH " + p["eeh"].replace("p–", "–", 1))
             if tags:
@@ -142,10 +153,13 @@ def event_notes(days, start, end, last_posted):
     tick, fest = [], []
     for (name, park, times), dates in ticketed.items():
         if any(start <= x <= end for x in dates):
-            tick.append(f"<strong>{html.escape(name)}</strong> runs {spoken(times)} at {PARK_NAMES[park]} {date_span(dates, last_posted)}.")
+            where = "" if PARK_NAMES[park] in name else f" at {PARK_NAMES[park]}"
+            tick.append(f"<strong>{html.escape(name)}</strong> runs {spoken(times)}{where} {date_span(dates, last_posted)}.")
     for name, dates in festivals.items():
         if any(start <= x <= end for x in dates):
-            fest.append(f"<strong>{html.escape(name)}</strong> runs {date_span(dates, last_posted)}.")
+            # A festival seen on one day is usually ending, so say "through" rather than "on"
+            span = date_span(dates, last_posted) if len(dates) > 1 else f"through {long_date(dates[0])}"
+            fest.append(f"<strong>{html.escape(name)}</strong> runs {span}.")
     return tick, fest
 
 
