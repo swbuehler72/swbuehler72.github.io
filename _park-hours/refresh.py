@@ -25,6 +25,8 @@ import zoneinfo
 HERE = pathlib.Path(__file__).resolve().parent
 REPO = HERE.parent
 HOURS = HERE / "hours.json"
+# Festivals Disney announces on their own pages but leaves off the hours calendar
+LISTED_FESTIVALS = json.loads((HERE / "festivals.json").read_text(encoding="utf8"))
 PAGE = REPO / "park-hours" / "index.html"
 PDF = REPO / "park-hours" / "WDW-Park-Hours-60-Day.pdf"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -160,6 +162,10 @@ def event_notes(days, start, end, last_posted):
             # A festival seen on one day is usually ending, so say "through" rather than "on"
             span = date_span(dates, last_posted) if len(dates) > 1 else f"through {long_date(dates[0])}"
             fest.append(f"<strong>{html.escape(name)}</strong> runs {span}.")
+    for f in LISTED_FESTIVALS:
+        if f["start"] <= end and f["end"] >= start and f["name"] not in festivals:
+            begins = f"from {long_date(f['start'])} " if f["start"] > start else ""
+            fest.append(f"<strong>{html.escape(f['name'])}</strong> runs {begins}through {long_date(f['end'])}.")
     return tick, fest
 
 
