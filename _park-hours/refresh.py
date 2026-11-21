@@ -267,7 +267,7 @@ def diff_days(old, new):
 
 def log_update(today_iso, update):
     """Adds an update to updates.json, merging with any entry already logged today."""
-    log = json.loads(UPDATES.read_text(encoding="utf8")) if UPDATES.exists() else []
+    log = load_log()
     if log and log[-1]["date"] == today_iso:
         for key, items in update.items():
             log[-1].setdefault(key, []).extend(items)
@@ -277,7 +277,12 @@ def log_update(today_iso, update):
     return log
 
 
-def build_updates(log):
+def load_log():
+    return json.loads(UPDATES.read_text(encoding="utf8")) if UPDATES.exists() else []
+
+
+def build_updates(log, start, end):
+    """Updates page for the calendar's start..end; anything whose dates have all passed drops off."""
     def dates_text(dates):
         if len(dates) > 4:
             return f"{short_date(dates[0])} – {short_date(dates[-1])} ({len(dates)} dates)"
@@ -288,9 +293,18 @@ def build_updates(log):
     for entry in reversed(log):
         d = dt.date.fromisoformat(entry["date"])
         items = [f'<li class="note">{html.escape(n)}</li>' for n in entry.get("notes", [])]
+        for name, first, last in entry.get("festivals", []):
+            if first <= end and last >= start:
+                items.append(f'<li><span class="day">Festival</span><span><strong>{html.escape(name)}</strong> added, '
+                             f'{short_date(first)} – {short_date(last)}, {last[:4]}</span></li>')
         for name, dates in entry.get("new_events", []):
+            dates = [x for x in dates if x >= start]
+            if not dates:
+                continue
             items.append(f'<li><span class="day">New</span><span><strong>{html.escape(name)}</strong> on {dates_text(dates)}</span></li>')
         for iso, park, kind, old, new in entry.get("changed", []):
+            if iso < start:
+                continue
             what = "hours" if kind == "hours" else "events and extra hours"
             items.append(f'<li><span class="day">{short_date(iso)}</span><span><span class="park {park}">{PARK_NAMES[park]}</span> {what}: '
                          f'{value(old, "old")} → {value(new)}</span></li>')
@@ -340,8 +354,8 @@ def main():
     build_web(days, checked)
     build_pdf(days, checked)
     update = {k: v for k, v in diff_days(old, days).items() if v}
-    if update:
-        build_updates(log_update(today.isoformat(), update))
+    log = log_update(today.isoformat(), update) if update else load_log()
+    build_updates(log, min(days), max(days))
     HOURS.write_text(json.dumps({"checked": today.isoformat(), "days": days}, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
     keys = sorted(days)
     print(f"Posted {keys[0]} to {keys[-1]} ({len(keys)} days).")
