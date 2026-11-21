@@ -53,9 +53,9 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 4px; border-t
   <section id="how">
     <h2>How it works</h2>
     <ol>
-      <li>Each morning after 6:30 AM Eastern, a scheduled job on my own computer opens Walt Disney World's public <a href="https://disneyworld.disney.go.com/calendars/">Hours &amp; Events Calendar</a> in an ordinary web browser and reads the hours for every date Disney has posted. Disney posts about 60 days ahead.</li>
+      <li>Each morning after 6:30 AM Eastern, Claude, Anthropic's AI assistant, runs as a scheduled task in the Claude app on my computer. It opens Walt Disney World's public <a href="https://disneyworld.disney.go.com/calendars/">Hours &amp; Events Calendar</a> in a web browser and reads the hours for every date Disney has posted. Disney posts about 60 days ahead.</li>
       <li>For each day it records park hours for Magic Kingdom, EPCOT, Disney's Hollywood Studios and Disney's Animal Kingdom, along with Early Entry, Extended Evening Hours and separately ticketed events such as parties and Disney After Hours.</li>
-      <li>A script checks that the information is complete. If anything looks wrong, such as missing dates or a missing park, it stops and changes nothing.</li>
+      <li>Claude hands that information to a script, which checks that it's complete. If anything looks wrong, such as missing dates or a missing park, it stops and changes nothing.</li>
       <li>The script builds the web calendar and the two-page PDF, then publishes them to this site through GitHub Pages.</li>
       <li>It compares each day's information with the day before. Changes to dates already on the calendar, and events appearing for the first time, are listed on the <a href="../updates/">updates page</a>. Newly posted dates aren't listed there.</li>
     </ol>
@@ -63,8 +63,8 @@ footer { font-size: 13px; color: var(--muted); display: grid; gap: 4px; border-t
     <p>Disney's hours calendar doesn't always list EPCOT festivals. When it doesn't, I add the festival's dates by hand from Disney's own page for that festival, and they appear in the calendar notes while some of those dates are on the calendar.</p>
     <h3>What's added here</h3>
     <p>Everything else on the calendar comes straight from Disney. This site only adds the layout, short labels for events (for example "Christmas Party" or "After Hours"), holiday names such as Thanksgiving, and the notes that summarize when events run.</p>
-    <h3>Tools</h3>
-    <p>The pages and the script were built with help from Claude Code, Anthropic's AI coding tool, and I review what gets published.</p>
+    <h3>Built with Claude</h3>
+    <p>Claude Code, Anthropic's AI coding tool, built these pages and the script with me, and Claude runs the daily update. The script's checks are what keep a bad update from going out: daily updates publish automatically, without me reviewing each one. I review changes to how the site works.</p>
   </section>
 
   <section id="limits">
