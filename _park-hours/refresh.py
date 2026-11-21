@@ -29,6 +29,8 @@ HOURS = HERE / "hours.json"
 LISTED_FESTIVALS = json.loads((HERE / "festivals.json").read_text(encoding="utf8"))
 PAGE = REPO / "park-hours" / "index.html"
 PDF = REPO / "park-hours" / "WDW-Park-Hours-60-Day.pdf"
+UPDATES = HERE / "updates.json"
+UPDATES_PAGE = REPO / "park-hours" / "updates" / "index.html"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 MIN_DAYS = 55        # Disney posts about 60 days ahead; fewer than this means something is wrong
 
@@ -221,7 +223,7 @@ def build_pdf(days, checked):
                              check=True, capture_output=True, text=True, timeout=120).stdout
         crowded = re.search(r'data-overflow="(\d+)"', dom)
         if not crowded or crowded.group(1) != "0":
-            print(f"WARNING: PDF has {crowded.group(1) if crowded else 'an unknown number of'} crowded day cells. Check the layout.")
+            print(f"WARNING: PDF has {crowded.group(1) if crowded else 'an unknown number of'} crowded day cells or pages. Check the layout.")
         count = len(re.findall(rb"/Type\s*/Page[^s]", raw))
         if count != 2:
             raise SystemExit(f"PDF came out at {count} pages, expected 2. Nothing changed.")
@@ -239,6 +241,65 @@ def describe_changes(old, new):
                 if old_t[iso].get(k) != new_t[iso].get(k):
                     lines.append(f"{iso} {k}: {old_t[iso].get(k)} -> {new_t[iso].get(k)}")
     return lines
+
+
+def diff_days(old, new):
+    """Changes to dates already posted, and events or festivals seen for the first time."""
+    old_t, new_t = page_table(old), page_table(new)
+    changed = []
+    for iso in sorted(new_t):
+        if iso in old_t and old_t[iso] != new_t[iso]:
+            for park in PARK_NAMES:
+                for key, kind in ((park, "hours"), (park + "x", "extras")):
+                    if old_t[iso].get(key) != new_t[iso].get(key):
+                        changed.append([iso, park, kind, old_t[iso].get(key), new_t[iso].get(key)])
+    seen = {p["event"] for d in old.values() for p in d["parks"].values() if p["event"]}
+    seen |= {f for d in old.values() for f in d["festivals"]}
+    first = {}
+    for iso, day in sorted(new.items()):
+        for name in [p["event"] for p in day["parks"].values() if p["event"]] + day["festivals"]:
+            if name not in seen:
+                first.setdefault(name, [])
+                if iso not in first[name]:
+                    first[name].append(iso)
+    return {"changed": changed, "new_events": [[name, dates] for name, dates in first.items()]}
+
+
+def log_update(today_iso, update):
+    """Adds an update to updates.json, merging with any entry already logged today."""
+    log = json.loads(UPDATES.read_text(encoding="utf8")) if UPDATES.exists() else []
+    if log and log[-1]["date"] == today_iso:
+        for key, items in update.items():
+            log[-1].setdefault(key, []).extend(items)
+    else:
+        log.append({"date": today_iso, **update})
+    UPDATES.write_text(json.dumps(log, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+    return log
+
+
+def build_updates(log):
+    def dates_text(dates):
+        if len(dates) > 4:
+            return f"{short_date(dates[0])} – {short_date(dates[-1])} ({len(dates)} dates)"
+        return ", ".join(short_date(x) for x in dates)
+    def value(v, cls=""):
+        return f'<span class="val {cls}">{html.escape(v) if v else "none"}</span>'
+    entries = []
+    for entry in reversed(log):
+        d = dt.date.fromisoformat(entry["date"])
+        items = [f'<li class="note">{html.escape(n)}</li>' for n in entry.get("notes", [])]
+        for name, dates in entry.get("new_events", []):
+            items.append(f'<li><span class="day">New</span><span><strong>{html.escape(name)}</strong> on {dates_text(dates)}</span></li>')
+        for iso, park, kind, old, new in entry.get("changed", []):
+            what = "hours" if kind == "hours" else "events and extra hours"
+            items.append(f'<li><span class="day">{short_date(iso)}</span><span><span class="park {park}">{PARK_NAMES[park]}</span> {what}: '
+                         f'{value(old, "old")} → {value(new)}</span></li>')
+        if items:
+            entries.append(f'  <section class="entry">\n    <h2>{d.strftime("%A")}, {d.strftime("%B")} {d.day}, {d.year}</h2>\n'
+                           f'    <ul>\n      ' + "\n      ".join(items) + '\n    </ul>\n  </section>')
+    body = "\n".join(entries) or '  <p class="empty">No changes yet.</p>'
+    UPDATES_PAGE.parent.mkdir(exist_ok=True)
+    UPDATES_PAGE.write_text(fill((HERE / "template-updates.html").read_text(encoding="utf8"), ENTRIES=body), encoding="utf8")
 
 
 def git(*args):
@@ -278,6 +339,9 @@ def main():
     checked = f"{today.strftime('%B')} {today.day}, {today.year}"
     build_web(days, checked)
     build_pdf(days, checked)
+    update = {k: v for k, v in diff_days(old, days).items() if v}
+    if update:
+        build_updates(log_update(today.isoformat(), update))
     HOURS.write_text(json.dumps({"checked": today.isoformat(), "days": days}, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
     keys = sorted(days)
     print(f"Posted {keys[0]} to {keys[-1]} ({len(keys)} days).")

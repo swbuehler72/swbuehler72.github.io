@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Changes to Walt Disney World theme park hours and events, logged each time the calendar is refreshed from Disney's calendar.">
+<title>WDW Park Hours Updates</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one readable column, newest update first */
+:root {
+  --bg: #f5f6fb; --surface: #ffffff; --fg: #1b1d33; --muted: #5d6180; --line: #dfe1ee; --accent: #3a3fb0;
+  --mk: #c2410c; --ep: #0e7490; --hs: #a21caf; --ak: #3f7d20;
+  --f-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #12131f; --surface: #1b1d2e; --fg: #e9eaf5; --muted: #a2a5c2; --line: #2e3148; --accent: #9da2ff;
+    --mk: #fb8a5a; --ep: #4cc6de; --hs: #e07ff0; --ak: #8fd06a; color-scheme: dark; }
+}
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.55 var(--f-body); }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; display: grid; gap: 28px; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { font: 700 clamp(28px, 5vw, 40px)/1.1 var(--f-display); margin: 4px 0 8px; text-wrap: balance; }
+.sub { color: var(--muted); max-width: 64ch; }
+.entry { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 8px; }
+.entry h2 { font: 500 19px/1.2 var(--f-display); margin: 0; }
+.entry ul { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 4px; }
+.entry li { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: baseline; }
+.entry li.note { grid-template-columns: 1fr; color: var(--fg); }
+.day { font-weight: 600; font-variant-numeric: tabular-nums; }
+.park { font-weight: 600; }
+.park.mk { color: var(--mk); } .park.ep { color: var(--ep); } .park.hs { color: var(--hs); } .park.ak { color: var(--ak); }
+.old { color: var(--muted); text-decoration: line-through; }
+.val { font-family: var(--f-mono); font-size: 14px; }
+.empty { color: var(--muted); }
+footer { font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+@media (max-width: 480px) { .entry li { grid-template-columns: 1fr; gap: 0; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Walt Disney World · theme park hours</p>
+    <h1>Hours and event updates</h1>
+    <p class="sub">Changes Disney made to dates already on the calendar, plus events seen for the first time. Newly posted dates aren't listed. The calendar is usually updated daily after 6:30 AM ET. <a href="../">Back to the 60-day calendar</a></p>
+  </header>
+  <section class="entry">
+    <h2>Saturday, November 21, 2026</h2>
+    <ul>
+      <li class="note">Added EPCOT International Festival of the Holidays (November 27 – December 30) and EPCOT International Festival of the Arts (January 15 – March 1, 2027), from Disney&#x27;s festival pages.</li>
+      <li><span class="day">Dec 6</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–6p</span> → <span class="val ">8a–6p</span></span></li>
+      <li><span class="day">Dec 6</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 7</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">8a–11p</span></span></li>
+      <li><span class="day">Dec 7</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 8</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 9</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">8a–11p</span></span></li>
+      <li><span class="day">Dec 9</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 9</span><span><span class="park ak">Animal Kingdom</span> events and extra hours: <span class="val old">EEH 6–8p</span> → <span class="val ">EEH 7–9p</span></span></li>
+      <li><span class="day">Dec 10</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 11</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–6p</span> → <span class="val ">8a–6p</span></span></li>
+      <li><span class="day">Dec 11</span><span><span class="park hs">Hollywood Studios</span> hours: <span class="val old">9a–9p</span> → <span class="val ">8:30a–9p</span></span></li>
+      <li><span class="day">Dec 11</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 12</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">8a–11p</span></span></li>
+      <li><span class="day">Dec 12</span><span><span class="park hs">Hollywood Studios</span> hours: <span class="val old">9a–7p</span> → <span class="val ">8:30a–7p</span></span></li>
+      <li><span class="day">Dec 12</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–8p</span></span></li>
+    </ul>
+  </section>
+  <section class="entry">
+    <h2>Thursday, November 19, 2026</h2>
+    <ul>
+      <li><span class="day">New</span><span><strong>Disney After Hours at Disney&#x27;s Hollywood Studios</strong> on Jan 16</span></li>
+    </ul>
+  </section>
+  <section class="entry">
+    <h2>Saturday, November 14, 2026</h2>
+    <ul>
+      <li><span class="day">New</span><span><strong>Special ticketed event</strong> on Nov 30</span></li>
+      <li><span class="day">Nov 30</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">9a–11p</span></span></li>
+      <li><span class="day">Nov 30</span><span><span class="park ak">Animal Kingdom</span> events and extra hours: <span class="val old">none</span> → <span class="val ">Special ticketed event</span></span></li>
+      <li><span class="day">Dec 2</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">8a–11p</span></span></li>
+      <li><span class="day">Dec 3</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–6p</span> → <span class="val ">8a–6p</span></span></li>
+      <li><span class="day">Dec 3</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 4</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–6p</span> → <span class="val ">8a–6p</span></span></li>
+      <li><span class="day">Dec 4</span><span><span class="park hs">Hollywood Studios</span> hours: <span class="val old">9a–9p</span> → <span class="val ">8:30a–9p</span></span></li>
+      <li><span class="day">Dec 4</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Dec 5</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">8a–11p</span></span></li>
+      <li><span class="day">Dec 5</span><span><span class="park hs">Hollywood Studios</span> hours: <span class="val old">9a–7p</span> → <span class="val ">8:30a–7p</span></span></li>
+      <li><span class="day">Dec 5</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–8p</span></span></li>
+    </ul>
+  </section>
+  <section class="entry">
+    <h2>Thursday, November 12, 2026</h2>
+    <ul>
+      <li><span class="day">New</span><span><strong>Disney After Hours at Magic Kingdom Park</strong> on Jan 11</span></li>
+    </ul>
+  </section>
+  <section class="entry">
+    <h2>Tuesday, November 10, 2026</h2>
+    <ul>
+      <li><span class="day">Nov 23</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–8p</span></span></li>
+    </ul>
+  </section>
+  <section class="entry">
+    <h2>Sunday, November 8, 2026</h2>
+    <ul>
+      <li><span class="day">Nov 22</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">9a–11p</span></span></li>
+      <li><span class="day">Nov 22</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–7p</span></span></li>
+      <li><span class="day">Nov 23</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">9a–11p</span></span></li>
+      <li><span class="day">Nov 23</span><span><span class="park hs">Hollywood Studios</span> hours: <span class="val old">9a–7p</span> → <span class="val ">8:30a–7p</span></span></li>
+      <li><span class="day">Nov 24</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–6p</span> → <span class="val ">8a–6p</span></span></li>
+      <li><span class="day">Nov 24</span><span><span class="park hs">Hollywood Studios</span> hours: <span class="val old">9a–9p</span> → <span class="val ">8:30a–9p</span></span></li>
+      <li><span class="day">Nov 24</span><span><span class="park ak">Animal Kingdom</span> hours: <span class="val old">8a–6p</span> → <span class="val ">8a–8p</span></span></li>
+      <li><span class="day">Nov 26</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">8a–11p</span></span></li>
+      <li><span class="day">Nov 28</span><span><span class="park mk">Magic Kingdom</span> hours: <span class="val old">9a–10p</span> → <span class="val ">9a–11p</span></span></li>
+    </ul>
+  </section>
+  <footer>
+    <p>Source: Walt Disney World Hours &amp; Events Calendar and Disney's festival pages. Disney says all information is subject to change without notice.</p>
+    <p>This site is not associated with EPCOT, Walt Disney World, or The Walt Disney Company.</p>
+  </footer>
+</main>
+</body>
+</html>

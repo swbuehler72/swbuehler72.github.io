@@ -105,7 +105,7 @@ document.querySelectorAll(".grid").forEach(g => {
   }
   g.innerHTML = html;
 });
-document.documentElement.dataset.overflow = [...document.querySelectorAll(".day")].filter(d => d.scrollHeight > d.clientHeight + 1).length;
+document.documentElement.dataset.overflow = [...document.querySelectorAll(".day, .page")].filter(d => d.scrollHeight > d.clientHeight + 1).length;
 </script>
 </body>
 </html>
