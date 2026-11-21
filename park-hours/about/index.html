@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How the unofficial Walt Disney World park hours calendars are made, plus disclaimers and terms of use.">
+<title>About the Park Hours Calendars</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one readable column of sections, with jump links at the top */
+:root {
+  --bg: #f5f6fb; --surface: #ffffff; --fg: #1b1d33; --muted: #5d6180; --line: #dfe1ee; --accent: #3a3fb0;
+  --f-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #12131f; --surface: #1b1d2e; --fg: #e9eaf5; --muted: #a2a5c2; --line: #2e3148; --accent: #9da2ff; color-scheme: dark; }
+}
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--f-body); }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; display: grid; gap: 28px; }
+p, ul, ol { margin: 0; }
+ul, ol { padding-left: 22px; display: grid; gap: 6px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { font: 700 clamp(28px, 5vw, 40px)/1.1 var(--f-display); margin: 4px 0 8px; text-wrap: balance; }
+h2 { font: 500 23px/1.2 var(--f-display); margin: 0 0 4px; text-wrap: balance; }
+h3 { font-size: 16px; font-weight: 600; margin: 6px 0 0; }
+.sub { color: var(--muted); max-width: 64ch; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; padding-block: 12px; border-block: 1px solid var(--line); }
+section { display: grid; gap: 10px; }
+.callout { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+footer { font-size: 13px; color: var(--muted); display: grid; gap: 4px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">Walt Disney World · theme park hours</p>
+    <h1>How these calendars are made</h1>
+    <p class="sub">The park hours calendar, its printable PDF and the updates page are an unofficial personal project by Steven Buehler. This page explains where the information comes from and the terms for using it.</p>
+  </header>
+
+  <nav aria-label="On this page">
+    <a href="#how">How it works</a>
+    <a href="#limits">Limits</a>
+    <a href="#disclaimer">Disclaimer</a>
+    <a href="#terms">Terms of use</a>
+    <a href="#privacy">Privacy</a>
+    <a href="../">Back to the calendar</a>
+  </nav>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <ol>
+      <li>Each morning after 6:30 AM Eastern, a scheduled job on my own computer opens Walt Disney World's public <a href="https://disneyworld.disney.go.com/calendars/">Hours &amp; Events Calendar</a> in an ordinary web browser and reads the hours for every date Disney has posted. Disney posts about 60 days ahead.</li>
+      <li>For each day it records park hours for Magic Kingdom, EPCOT, Disney's Hollywood Studios and Disney's Animal Kingdom, along with Early Entry, Extended Evening Hours and separately ticketed events such as parties and Disney After Hours.</li>
+      <li>A script checks that the information is complete. If anything looks wrong, such as missing dates or a missing park, it stops and changes nothing.</li>
+      <li>The script builds the web calendar and the two-page PDF, then publishes them to this site through GitHub Pages.</li>
+      <li>It compares each day's information with the day before. Changes to dates already on the calendar, and events appearing for the first time, are listed on the <a href="../updates/">updates page</a>. Newly posted dates aren't listed there.</li>
+    </ol>
+    <h3>Festivals</h3>
+    <p>Disney's hours calendar doesn't always list EPCOT festivals. When it doesn't, I add the festival's dates by hand from Disney's own page for that festival, and they appear in the calendar notes while some of those dates are on the calendar.</p>
+    <h3>What's added here</h3>
+    <p>Everything else on the calendar comes straight from Disney. This site only adds the layout, short labels for events (for example "Christmas Party" or "After Hours"), holiday names such as Thanksgiving, and the notes that summarize when events run.</p>
+    <h3>Tools</h3>
+    <p>The pages and the script were built with help from Claude Code, Anthropic's AI coding tool, and I review what gets published.</p>
+  </section>
+
+  <section id="limits">
+    <h2>Limits</h2>
+    <ul>
+      <li>The calendar is only as current as its last update. Disney can change hours at any time, including after the morning update.</li>
+      <li>An update can be missed, for example when my computer is off, so the calendar may lag by a day or more. The date of the last check is shown at the bottom of the calendar and the PDF.</li>
+      <li>The PDF is a snapshot. A printed or downloaded copy doesn't update.</li>
+      <li>Only the four theme parks are covered. Water parks, Disney Springs, parades, fireworks, character meals, closures and refurbishments are not included.</li>
+      <li>All times are Eastern. Early Entry and Extended Evening Hours are only for eligible guests, as Disney defines them.</li>
+    </ul>
+  </section>
+
+  <section id="disclaimer">
+    <h2>Disclaimer</h2>
+    <div class="callout">
+      <p>This is an unofficial site. It is not associated with, endorsed by, sponsored by or affiliated with Walt Disney World or The Walt Disney Company.</p>
+    </div>
+    <p>Walt Disney World, Magic Kingdom, EPCOT, Disney's Hollywood Studios, Disney's Animal Kingdom, Disney After Hours and the names of Disney events and festivals are trademarks of their respective owners. They are used here only to identify the parks and events the hours refer to.</p>
+    <p>Always confirm hours on Disney's <a href="https://disneyworld.disney.go.com/calendars/">official calendar</a> before you go. Tickets, park reservations, and separately ticketed events are sold by Disney, not here.</p>
+  </section>
+
+  <section id="terms">
+    <h2>Terms of use</h2>
+    <p>By using these calendars you agree to the following:</p>
+    <ul>
+      <li><strong>For personal planning only.</strong> You're welcome to view, print and share the calendars for personal, non-commercial use.</li>
+      <li><strong>No guarantee.</strong> The information is provided "as is", without warranty of any kind. It may be incomplete, out of date or wrong.</li>
+      <li><strong>Your decisions are yours.</strong> I'm not responsible for any loss or inconvenience from relying on these calendars, including travel, ticket or dining plans. Check with Disney before making plans.</li>
+      <li><strong>Other sites.</strong> Links to Disney and other sites are provided for convenience. I don't control those sites and am not responsible for their content.</li>
+      <li><strong>Availability.</strong> The calendars may change, pause or stop at any time without notice.</li>
+      <li><strong>Changes to these terms.</strong> I may update this page. The current version applies whenever you use the site.</li>
+    </ul>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy</h2>
+    <ul>
+      <li>This site has no accounts, forms, ads, analytics or cookies, and I don't collect information about visitors.</li>
+      <li>The calendar remembers which parks you've chosen to show. That choice is saved only in your own browser and is never sent anywhere.</li>
+      <li>The site is hosted on GitHub Pages and loads fonts from Google Fonts. Like any web host, those services receive basic request information such as your IP address. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a> and the <a href="https://policies.google.com/privacy">Google privacy policy</a>.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Corrections and questions are welcome through my new site, <a href="https://www.swb72.us">EPWOT: The Experimental Prototype Website of Tomorrow</a>.</p>
+  </section>
+
+  <footer>
+    <p>Last updated November 21, 2026.</p>
+    <p>This site is not associated with Walt Disney World or The Walt Disney Company.</p>
+  </footer>
+</main>
+</body>
+</html>
