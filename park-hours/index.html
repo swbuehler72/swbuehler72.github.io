@@ -154,8 +154,8 @@ h1 span { color: var(--accent); }
     <section>
       <h2>Event nights</h2>
       <ul>
-        <li><strong>Disney Jollywood Nights</strong> runs 7:30 PM to 12:30 AM at Hollywood Studios through January 5.</li>
         <li><strong>Mickey&#x27;s Very Merry Christmas Party</strong> runs 7 PM to midnight at Magic Kingdom through December 22.</li>
+        <li><strong>Disney Jollywood Nights</strong> runs 7:30 PM to 12:30 AM at Hollywood Studios through January 5.</li>
         <li><strong>Special ticketed event</strong> runs 7 PM to 10 PM at Animal Kingdom on November 30.</li>
         <li><strong>Disney After Hours at Magic Kingdom Park</strong> runs 10 PM to 1 AM through January 18.</li>
         <li><strong>Disney After Hours at Disney&#x27;s Hollywood Studios</strong> runs 9:30 PM to 12:30 AM on January 16.</li>
@@ -167,7 +167,7 @@ h1 span { color: var(--accent); }
     </section>
     <section>
       <h2>Source</h2>
-      <p><a href="https://disneyworld.disney.go.com/calendars/" target="_blank" rel="noopener">Walt Disney World Hours &amp; Events Calendar</a>, checked for every posted date on November 23, 2026.</p>
+      <p><a href="https://disneyworld.disney.go.com/calendars/" target="_blank" rel="noopener">Walt Disney World Hours &amp; Events Calendar</a>, checked for every posted date on November 24, 2026.</p>
       <p style="margin-top:6px"><a href="WDW-Park-Hours-60-Day.pdf">Download the printable PDF</a> (two letter-size pages).</p>
     </section>
   </div>
@@ -185,14 +185,6 @@ const PARKS = [
 
 // Filled in by _park-hours/refresh.py from Disney's Hours & Events Calendar.
 const DAYS = {
-  "2026-11-23": {
-    "mk": "9a–11p",
-    "ep": "9a–9p",
-    "epx": "EEH 9–11p",
-    "hs": "8:30a–7p",
-    "hsx": "Jollywood Nights",
-    "ak": "8a–8p"
-  },
   "2026-11-24": {
     "mk": "8a–6p",
     "mkx": "Christmas Party",
@@ -333,7 +325,7 @@ const DAYS = {
     "mkx": "Christmas Party",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–7p"
   },
   "2026-12-14": {
     "mk": "9a–10p",
@@ -341,49 +333,49 @@ const DAYS = {
     "epx": "EEH 9–11p",
     "hs": "9a–7p",
     "hsx": "Jollywood Nights",
-    "ak": "8a–6p"
+    "ak": "8a–7p"
   },
   "2026-12-15": {
     "mk": "9a–6p",
     "mkx": "Christmas Party",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–7p"
   },
   "2026-12-16": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p",
-    "akx": "EEH 6–8p"
+    "ak": "8a–7p",
+    "akx": "EEH 7–9p"
   },
   "2026-12-17": {
     "mk": "9a–6p",
     "mkx": "Christmas Party",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–7p"
   },
   "2026-12-18": {
     "mk": "9a–6p",
     "mkx": "Christmas Party",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-19": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–7p",
     "hsx": "Jollywood Nights",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-20": {
     "mk": "9a–6p",
     "mkx": "Christmas Party",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-21": {
     "mk": "9a–10p",
@@ -391,91 +383,91 @@ const DAYS = {
     "epx": "EEH 9–11p",
     "hs": "9a–7p",
     "hsx": "Jollywood Nights",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-22": {
     "mk": "9a–6p",
     "mkx": "Christmas Party",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-23": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–7p",
     "hsx": "Jollywood Nights",
-    "ak": "8a–6p",
-    "akx": "EEH 6–8p"
+    "ak": "8a–8p",
+    "akx": "EEH 8–10p"
   },
   "2026-12-24": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-25": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-26": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-27": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-28": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "epx": "EEH 9–11p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-29": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2026-12-30": {
     "mk": "9a–12a",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p",
-    "akx": "EEH 6–8p"
+    "ak": "8a–8p",
+    "akx": "EEH 8–10p"
   },
   "2026-12-31": {
     "mk": "9a–12a",
     "ep": "9a–1a",
     "hs": "9a–12a",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2027-01-01": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2027-01-02": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–9p",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2027-01-03": {
     "mk": "9a–10p",
     "ep": "9a–9p",
     "hs": "9a–7p",
     "hsx": "Jollywood Nights",
-    "ak": "8a–6p"
+    "ak": "8a–8p"
   },
   "2027-01-04": {
     "mk": "9a–9p",
@@ -597,6 +589,12 @@ const DAYS = {
     "ak": "8a–6p"
   },
   "2027-01-22": {
+    "mk": "9a–9p",
+    "ep": "9a–9p",
+    "hs": "9a–9p",
+    "ak": "8a–6p"
+  },
+  "2027-01-23": {
     "mk": "9a–9p",
     "ep": "9a–9p",
     "hs": "9a–9p",

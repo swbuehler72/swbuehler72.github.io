@@ -1,35 +1,6 @@
 {
- "checked": "2026-11-23",
+ "checked": "2026-11-24",
  "days": {
-  "2026-11-23": {
-   "parks": {
-    "mk": {
-     "hours": "9a–11p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": "9p–11p",
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "8:30a–7p",
-     "eeh": null,
-     "ticketed": "7:30p–12:30a",
-     "event": "Disney Jollywood Nights"
-    },
-    "ak": {
-     "hours": "8a–8p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": []
-  },
   "2026-11-24": {
    "parks": {
     "mk": {
@@ -602,7 +573,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–7p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -631,7 +602,7 @@
      "event": "Disney Jollywood Nights"
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–7p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -660,7 +631,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–7p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -689,8 +660,8 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
-     "eeh": "6p–8p",
+     "hours": "8a–7p",
+     "eeh": "7p–9p",
      "ticketed": null,
      "event": null
     }
@@ -718,7 +689,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–7p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -747,7 +718,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -776,7 +747,7 @@
      "event": "Disney Jollywood Nights"
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -805,7 +776,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -834,7 +805,7 @@
      "event": "Disney Jollywood Nights"
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -863,7 +834,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -892,8 +863,8 @@
      "event": "Disney Jollywood Nights"
     },
     "ak": {
-     "hours": "8a–6p",
-     "eeh": "6p–8p",
+     "hours": "8a–8p",
+     "eeh": "8p–10p",
      "ticketed": null,
      "event": null
     }
@@ -921,7 +892,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -950,7 +921,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -979,7 +950,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1008,7 +979,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1037,7 +1008,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1066,7 +1037,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1095,8 +1066,8 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
-     "eeh": "6p–8p",
+     "hours": "8a–8p",
+     "eeh": "8p–10p",
      "ticketed": null,
      "event": null
     }
@@ -1124,7 +1095,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1153,7 +1124,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1182,7 +1153,7 @@
      "event": null
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1211,7 +1182,7 @@
      "event": "Disney Jollywood Nights"
     },
     "ak": {
-     "hours": "8a–6p",
+     "hours": "8a–8p",
      "eeh": null,
      "ticketed": null,
      "event": null
@@ -1742,6 +1713,35 @@
    "festivals": []
   },
   "2027-01-22": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-23": {
    "parks": {
     "mk": {
      "hours": "9a–9p",
