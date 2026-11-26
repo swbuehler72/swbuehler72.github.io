@@ -1,35 +1,6 @@
 {
- "checked": "2026-11-25",
+ "checked": "2026-11-26",
  "days": {
-  "2026-11-25": {
-   "parks": {
-    "mk": {
-     "hours": "9a–6p",
-     "eeh": null,
-     "ticketed": "7p–12a",
-     "event": "Mickey's Very Merry Christmas Party"
-    },
-    "ep": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "hs": {
-     "hours": "9a–9p",
-     "eeh": null,
-     "ticketed": null,
-     "event": null
-    },
-    "ak": {
-     "hours": "8a–6p",
-     "eeh": "6p–8p",
-     "ticketed": null,
-     "event": null
-    }
-   },
-   "festivals": []
-  },
   "2026-11-26": {
    "parks": {
     "mk": {
@@ -1752,6 +1723,35 @@
     "ep": {
      "hours": "9a–9p",
      "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "hs": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ak": {
+     "hours": "8a–6p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    }
+   },
+   "festivals": []
+  },
+  "2027-01-25": {
+   "parks": {
+    "mk": {
+     "hours": "9a–9p",
+     "eeh": null,
+     "ticketed": null,
+     "event": null
+    },
+    "ep": {
+     "hours": "9a–9p",
+     "eeh": "9p–11p",
      "ticketed": null,
      "event": null
     },
